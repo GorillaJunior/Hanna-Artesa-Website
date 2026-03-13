@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanna Artesa | Rucno radjena kolekcija</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fdf8f2;
+      --bg-soft: #fbf4ea;
+      --card: #ffffff;
+      --card-soft: #f7efe4;
+      --card-accent: #f3e4d2;
+      --text: #4f3f33;
+      --muted: #756252;
+      --muted-2: #9f886d;
+      --line: #e9dece;
+      --line-strong: #dbc9b2;
+      --accent: #c98f67;
+      --accent-dark: #b87d54;
+      --shadow: 0 10px 30px rgba(93, 70, 41, 0.07);
+      --radius-xl: 34px;
+      --radius-lg: 28px;
+      --radius-md: 24px;
+      --radius-pill: 999px;
+      --container: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .serif {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--muted-2);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(233, 222, 206, 0.85);
+      background: rgba(253, 248, 242, 0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .brand-kicker {
+      margin: 0 0 4px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--muted-2);
+    }
+
+    .brand-name {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: 10px 18px;
+      border: 1px solid rgba(219, 201, 178, 0.7);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.42);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .brand-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(93, 70, 41, 0.08);
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .brand-logo {
+      display: block;
+      width: 100%;
+      max-width: 138px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: 15px;
+    }
+
+    .nav a {
+      color: #6c584a;
+    }
+
+    .nav a:hover {
+      color: #8b6f53;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-pill);
+      padding: 14px 24px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line-strong);
+      color: #5b483c;
+    }
+
+    .btn-secondary:hover {
+      background: var(--card-soft);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+      gap: 64px;
+      padding: 72px 0 48px;
+      align-items: center;
+    }
+
+    .hero-title {
+      max-width: 9ch;
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 5.6vw, 74px);
+      line-height: 0.94;
+      font-weight: 600;
+      color: #49382d;
+      text-wrap: balance;
+    }
+
+    .hero-text,
+    .story-text,
+    .newsletter-text {
+      max-width: 620px;
+      margin: 24px 0 0;
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 760px;
+      margin-top: 36px;
+    }
+
+    .mini-card,
+    .product-card,
+    .collection-card,
+    .feature-card,
+    .message-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .mini-card {
+      padding: 20px;
+    }
+
+    .mini-icon {
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--card-soft);
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .mini-card p,
+    .message-card p,
+    .feature-card p,
+    .collection-card p,
+    .product-card .price,
+    .footer-copy,
+    .footer-links a,
+    .contact-item {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.85;
+      color: #7b6756;
+    }
+
+    .placeholder {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      min-height: 260px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.9), transparent 48%),
+        linear-gradient(145deg, #fbf4ea, #f4e7d6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.8), transparent 18%),
+        radial-gradient(circle at 80% 25%, rgba(201, 143, 103, 0.12), transparent 24%);
+    }
+
+    .placeholder-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .placeholder-badge {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      border: 1px dashed #c9b79f;
+      background: rgba(255,255,255,0.72);
+    }
+
+    .placeholder-label {
+      margin: 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9d866c;
+    }
+
+    .placeholder.tall {
+      min-height: 500px;
+    }
+
+    .message-band {
+      padding: 18px 0 10px;
+    }
+
+    .message-band-inner {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      padding: 40px;
+      border-radius: var(--radius-xl);
+      background: var(--card-soft);
+    }
+
+    .message-title,
+    .section-title,
+    .story-title,
+    .newsletter-title,
+    .footer-title,
+    .feature-title,
+    .collection-title,
+    .product-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--text);
+    }
+
+    .message-title,
+    .section-title,
+    .story-title,
+    .newsletter-title {
+      font-size: clamp(36px, 3vw, 52px);
+      line-height: 1.05;
+      font-weight: 600;
+    }
+
+    .message-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .message-card {
+      padding: 24px;
+      box-shadow: none;
+    }
+
+    .section {
+      padding: 68px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .products-grid,
+    .collections-grid,
+    .feature-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .product-card,
+    .collection-card {
+      padding: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover,
+    .collection-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .product-meta {
+      padding: 16px 4px 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--card-soft);
+      color: #9d7d59;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .product-title {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .small-btn {
+      border: 1px solid var(--line-strong);
+      background: transparent;
+      color: #5f4b3e;
+      border-radius: var(--radius-pill);
+      padding: 10px 18px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .small-btn:hover {
+      background: var(--card-soft);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .story-copy p + p {
+      margin-top: 18px;
+    }
+
+    .collections-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .collection-card {
+      padding: 20px;
+    }
+
+    .collection-title {
+      margin-top: 18px;
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .collection-card p {
+      margin-top: 12px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: #6d5747;
+    }
+
+    .text-link:hover {
+      color: #49382d;
+    }
+
+    .feature-wrap {
+      padding: 10px 0 0;
+    }
+
+    .feature-band {
+      padding: 40px;
+      border-radius: var(--radius-xl);
+      background: var(--card-accent);
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-card {
+      padding: 28px;
+      background: #fffaf4;
+      box-shadow: none;
+    }
+
+    .feature-title {
+      font-size: 34px;
+      line-height: 1.05;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .newsletter {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 72px 0;
+    }
+
+    .newsletter-text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      max-width: 660px;
+      margin: 32px auto 0;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      height: 56px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      padding: 0 20px;
+      outline: none;
+    }
+
+    .newsletter-input::placeholder {
+      color: #a08d79;
+    }
+
+    .site-footer {
+      background: var(--bg-soft);
+      border-top: 1px solid rgba(233, 222, 206, 0.9);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding: 44px 0;
+    }
+
+    .footer-title {
+      font-size: 34px;
+      line-height: 1.05;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .footer-head {
+      margin: 0 0 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: #5f4b3e;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: transparent;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1100px) {
+      .hero,
+      .message-band-inner,
+      .story-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .collections-grid,
+      .feature-grid,
+      .hero-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        width: min(var(--container), calc(100% - 32px));
+      }
+
+      .nav {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(253, 248, 242, 0.98);
+        box-shadow: var(--shadow);
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header-btn {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-features,
+      .products-grid,
+      .collections-grid,
+      .feature-grid,
+      .message-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .message-band-inner,
+      .feature-band {
+        padding: 24px;
+      }
+
+      .brand-name {
+        font-size: 28px;
+      }
+
+      .brand-link {
+        min-width: 144px;
+        padding: 8px 14px;
+      }
+
+      .brand-logo {
+        max-width: 118px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="#" aria-label="Hanna Artesa">
+        <img class="brand-logo" src="logo.png" alt="Hanna Artesa logo" />
+      </a>
+
+      <nav class="nav" id="navMenu">
+        <a href="#shop">Prodavnica</a>
+        <a href="#story">Nasa prica</a>
+        <a href="#collections">Kolekcije</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="btn btn-secondary header-btn">Kupi sada</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otvori meni">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div>
+        <p class="eyebrow">Nezno, bezvremeno, rucno radjeno</p>
+        <h2 class="hero-title">Rucno radjeni dragulji koji unose toplinu, mekoću i dusu u svaki prostor.</h2>
+        <p class="hero-text">
+          Hanna Artesa spaja rucni rad, mekane tonove i miran premium utisak kako bi tvoji proizvodi bili u prvom planu.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#collections">Pogledaj kolekciju</a>
+          <a class="btn btn-secondary" href="#story">Procitaj nasu pricu</a>
+        </div>
+
+        <div class="hero-features">
+          <article class="mini-card">
+            <div class="mini-icon">❤</div>
+            <p>Osmisljeno da deluje toplo, poklonivo i blisko porodicnom domu.</p>
+          </article>
+          <article class="mini-card">
+            <div class="mini-icon">❋</div>
+            <p>Idealno za rucne radove, igracke, dekor i uspomene koje ostaju.</p>
+          </article>
+          <article class="mini-card">
+            <div class="mini-icon">✦</div>
+            <p>Lako se zamenjuje tvojim pravim fotografijama proizvoda.</p>
+          </article>
+        </div>
+      </div>
+
+      <div>
+        <div class="placeholder tall">
+          <div class="placeholder-inner">
+            <div class="placeholder-badge"></div>
+            <p class="placeholder-label">Glavna fotografija</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="message-band">
+      <div class="container message-band-inner">
+        <div>
+          <p class="eyebrow">Poruka brenda</p>
+          <h3 class="message-title">Napravljeno sa paznjom, stilizovano sa mirnom elegancijom.</h3>
+        </div>
+
+        <div class="message-grid">
+          <article class="message-card">
+            <p style="font-weight:600;color:var(--text);margin-bottom:8px;">Prefinjen butik izgled</p>
+            <p>Nezan urednicki raspored koji deluje premium, a ne hladno ili preterano minimalisticki.</p>
+          </article>
+          <article class="message-card">
+            <p style="font-weight:600;color:var(--text);margin-bottom:8px;">Napravljen za pricu o proizvodima</p>
+            <p>Koristi sekcije za istaknute komade, vrednosti brenda, kolekcije, poklone i sezonske novitete.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Istaknuti proizvodi</p>
+            <h3 class="section-title">Najprodavaniji proizvodi Hanna Artesa</h3>
+          </div>
+          <a class="text-link" href="#">Pogledaj sve proizvode →</a>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="story" style="padding-top:10px;">
+      <div class="container story-grid">
+        <div>
+          <div class="placeholder tall">
+            <div class="placeholder-inner">
+              <div class="placeholder-badge"></div>
+              <p class="placeholder-label">Fotografija brenda ili radionice</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-copy">
+          <p class="eyebrow">Nasa prica</p>
+          <h3 class="story-title">Topla prica brenda sa kojom kupci odmah mogu da se povezu.</h3>
+          <p class="story-text">
+            Ova sekcija je idealna za tvoju Hanna Artesa pricu — ko si, sta te inspirise, kako nastaju proizvodi i zasto su posebni.
+          </p>
+          <p class="story-text">
+            Zameni ovaj tekst svojom pravom porukom brenda i dodaj fotografije radionice, proizvoda ili lifestyle scena kako bi sajt delovao licno i pouzdano.
+          </p>
+          <div style="margin-top:32px;">
+            <a class="btn btn-secondary" href="#">Saznaj vise</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="container">
+        <div style="margin-bottom:28px;">
+          <p class="eyebrow">Kolekcije</p>
+          <h3 class="section-title">Otkrij jos vise</h3>
+        </div>
+
+        <div class="collections-grid" id="collectionsGrid"></div>
+      </div>
+    </section>
+
+    <section class="feature-wrap">
+      <div class="container feature-band">
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h4 class="feature-title">Rucno radjeni detalji</h4>
+            <p>Ovde mozes objasniti materijale, nacin izrade i paznju ulozenu u svaki komad.</p>
+          </article>
+          <article class="feature-card">
+            <h4 class="feature-title">Pokloni sa znacenjem</h4>
+            <p>Istakni zasto Hanna Artesa proizvodi deluju licno, pazljivo i posebno za darivanje.</p>
+          </article>
+          <article class="feature-card">
+            <h4 class="feature-title">Mirna premium estetika</h4>
+            <p>Paleta, razmaci, zaobljene kartice i serif naslovi daju stranici prefinjen butik karakter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter container">
+      <p class="eyebrow">Ostani u kontaktu</p>
+      <h3 class="newsletter-title">Pridruzi se svetu Hanna Artesa</h3>
+      <p class="newsletter-text">
+        Ovde mozes dodati prijavu za newsletter, novosti, promocije ili najave novih kolekcija.
+      </p>
+
+      <form class="newsletter-form" id="newsletterForm">
+        <input class="newsletter-input" type="email" id="newsletterEmail" placeholder="Unesi svoju email adresu" required>
+        <button class="btn btn-primary" type="submit">Prijavi se</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="brand-kicker">Hanna Artesa</p>
+        <h4 class="footer-title">Rucno radjeno sa toplinom</h4>
+        <p class="footer-copy">
+          Koncept pocetne stranice inspirisan mekim butik stilom rucnog rada, spreman za tvoje slike i sadrzaj.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-head">Prodavnica</p>
+        <div class="footer-links">
+          <a href="#shop">Najprodavanije</a>
+          <a href="#collections">Kolekcije</a>
+          <a href="#">Ideje za poklon</a>
+          <a href="#">Novi proizvodi</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">O nama</p>
+        <div class="footer-links">
+          <a href="#story">Nasa prica</a>
+          <a href="#">Nacin izrade</a>
+          <a href="#">Cesta pitanja</a>
+          <a href="#">Dostava</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Kontakt</p>
+        <div class="contact-list">
+          <p class="contact-item">hello@hannaartesa.com</p>
+          <p class="contact-item">@hannaartesa</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const featuredProducts = [
+      { name: "Hanna Zeka", price: "4.900 RSD", tag: "Najprodavanije" },
+      { name: "Luna Meda", price: "5.400 RSD", tag: "Rucni rad" },
+      { name: "Mila Labud", price: "5.100 RSD", tag: "Novo" },
+      { name: "Noa Slonce", price: "5.900 RSD", tag: "Mekani pamuk" }
+    ];
+
+    const collections = [
+      {
+        title: "Decija kolekcija",
+        text: "Nezni tonovi, bezvremenski oblici i rucno radjeni detalji koji unose toplinu u decije sobe."
+      },
+      {
+        title: "Pokloni za uspomenu",
+        text: "Pazljivo pravljeni rucni komadi koji deluju licno, emotivno i posebno."
+      },
+      {
+        title: "Sezonski favoriti",
+        text: "Topla kolekcija osmisljena za posebne trenutke, proslave i poklone koji se pamte."
+      }
+    ];
+
+    function createPlaceholder(label, tall = false) {
+      const wrapper = document.createElement("div");
+      wrapper.className = `placeholder ${tall ? "tall" : ""}`.trim();
+      wrapper.innerHTML = `
+        <div class="placeholder-inner">
+          <div class="placeholder-badge"></div>
+          <p class="placeholder-label">${label}</p>
+        </div>
+      `;
+      return wrapper;
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById("productsGrid");
+      featuredProducts.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "product-card";
+
+        const image = createPlaceholder("Fotografija proizvoda");
+
+        card.innerHTML = `
+          <div class="product-meta">
+            <span class="tag">${item.tag}</span>
+            <h4 class="product-title">${item.name}</h4>
+            <div class="product-bottom">
+              <p class="price">${item.price}</p>
+              <button class="small-btn">Pogledaj</button>
+            </div>
+          </div>
+        `;
+
+        card.prepend(image);
+        grid.appendChild(card);
+      });
+    }
+
+    function renderCollections() {
+      const grid = document.getElementById("collectionsGrid");
+      collections.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "collection-card";
+
+        const image = createPlaceholder("Fotografija kolekcije");
+
+        card.innerHTML = `
+          <h4 class="collection-title">${item.title}</h4>
+          <p>${item.text}</p>
+          <a class="text-link" href="#">Pogledaj kolekciju →</a>
+        `;
+
+        card.prepend(image);
+        grid.appendChild(card);
+      });
+    }
+
+    function setupMenu() {
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+      });
+
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => navMenu.classList.remove("open"));
+      });
+    }
+
+    function setupNewsletter() {
+      const form = document.getElementById("newsletterForm");
+      const emailInput = document.getElementById("newsletterEmail");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        if (!email) return;
+        alert(`Hvala na prijavi, ${email}!`);
+        form.reset();
+      });
+    }
+
+    renderProducts();
+    renderCollections();
+    setupMenu();
+    setupNewsletter();
+  </script>
+</body>
+</html>
