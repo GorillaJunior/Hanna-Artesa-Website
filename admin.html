@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Artesa | Admin</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-data.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-home" href="index.html" aria-label="Hanna Artesa">
+        <img class="brand-logo" src="logo.png" alt="Hanna Artesa logo">
+      </a>
+
+      <nav class="nav" aria-label="Admin navigacija">
+        <a href="index.html">Pocetna</a>
+        <a href="shop.html">Prodavnica</a>
+        <a href="admin.html" aria-current="page">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="container admin-hero">
+      <div>
+        <p class="eyebrow">Admin Panel</p>
+        <h1 class="admin-title">Upravljanje proizvodima i lokalna analitika</h1>
+        <p class="admin-text">
+          Ova verzija panela radi bez pravog servera, pa cuva proizvode, klikove, prijave i sesije
+          u browser storage-u na ovom uredjaju. Za prave korisnike, zajednicki admin i globalnu
+          analitiku i dalje je potreban backend i baza.
+        </p>
+      </div>
+
+      <div class="admin-actions">
+        <button class="btn btn-primary" id="adminExportBtn" type="button">Export podataka</button>
+        <button class="btn btn-secondary" id="adminResetProductsBtn" type="button">Vrati pocetne proizvode</button>
+        <button class="btn btn-secondary" id="adminClearAnalyticsBtn" type="button">Obrisi analitiku</button>
+      </div>
+    </section>
+
+    <section class="container admin-stats" id="adminStatsGrid">
+      <article class="admin-stat-card">
+        <p class="admin-stat-label">Aktivni proizvodi</p>
+        <strong class="admin-stat-value" id="statActiveProducts">0</strong>
+      </article>
+      <article class="admin-stat-card">
+        <p class="admin-stat-label">Arhivirani proizvodi</p>
+        <strong class="admin-stat-value" id="statArchivedProducts">0</strong>
+      </article>
+      <article class="admin-stat-card">
+        <p class="admin-stat-label">Page views</p>
+        <strong class="admin-stat-value" id="statPageViews">0</strong>
+      </article>
+      <article class="admin-stat-card">
+        <p class="admin-stat-label">Klikovi na proizvode</p>
+        <strong class="admin-stat-value" id="statProductClicks">0</strong>
+      </article>
+      <article class="admin-stat-card">
+        <p class="admin-stat-label">Otvorene slike</p>
+        <strong class="admin-stat-value" id="statImageOpens">0</strong>
+      </article>
+      <article class="admin-stat-card">
+        <p class="admin-stat-label">Dodavanja u korpu</p>
+        <strong class="admin-stat-value" id="statCartAdds">0</strong>
+      </article>
+      <article class="admin-stat-card">
+        <p class="admin-stat-label">Newsletter prijave</p>
+        <strong class="admin-stat-value" id="statNewsletterSignups">0</strong>
+      </article>
+      <article class="admin-stat-card">
+        <p class="admin-stat-label">Sesije</p>
+        <strong class="admin-stat-value" id="statSessions">0</strong>
+      </article>
+    </section>
+
+    <section class="container admin-layout">
+      <section class="admin-panel-card">
+        <div class="admin-panel-head">
+          <div>
+            <p class="eyebrow">Proizvodi</p>
+            <h2 class="admin-section-title">Dodaj ili izmeni listing</h2>
+          </div>
+        </div>
+
+        <form class="admin-form" id="adminProductForm">
+          <input type="hidden" id="adminProductId">
+          <label class="admin-field">
+            <span>Naziv proizvoda</span>
+            <input class="admin-input" id="adminProductName" type="text" required>
+          </label>
+          <label class="admin-field">
+            <span>Cena u RSD</span>
+            <input class="admin-input" id="adminProductPrice" type="number" min="0" step="100" required>
+          </label>
+          <label class="admin-field admin-field-full">
+            <span>Putanja slike</span>
+            <input class="admin-input" id="adminProductImage" type="text" placeholder="Slike/Proizvodi/naziv-slike.jpeg" required>
+          </label>
+          <label class="admin-field">
+            <span>Status</span>
+            <select class="admin-input" id="adminProductStatus">
+              <option value="active">Aktivan</option>
+              <option value="archived">Arhiviran</option>
+            </select>
+          </label>
+          <div class="admin-form-actions">
+            <button class="btn btn-primary" type="submit">Sacuvaj proizvod</button>
+            <button class="btn btn-secondary" id="adminFormResetBtn" type="button">Ocisti formu</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-panel-card">
+        <div class="admin-panel-head">
+          <div>
+            <p class="eyebrow">Pregled</p>
+            <h2 class="admin-section-title">Lista listinga</h2>
+          </div>
+          <input class="admin-input admin-search" id="adminSearchInput" type="search" placeholder="Pretrazi proizvode">
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Proizvod</th>
+                <th>Cena</th>
+                <th>Status</th>
+                <th>Slika</th>
+                <th>Akcije</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <section class="container admin-insights">
+      <section class="admin-panel-card">
+        <div class="admin-panel-head">
+          <div>
+            <p class="eyebrow">Aktivnost</p>
+            <h2 class="admin-section-title">Skorasnji dogadjaji</h2>
+          </div>
+        </div>
+        <div class="admin-feed" id="adminEventsFeed"></div>
+      </section>
+
+      <section class="admin-panel-card">
+        <div class="admin-panel-head">
+          <div>
+            <p class="eyebrow">Korisnici</p>
+            <h2 class="admin-section-title">Sesije i posete</h2>
+          </div>
+        </div>
+        <div class="admin-feed" id="adminSessionsFeed"></div>
+      </section>
+
+      <section class="admin-panel-card">
+        <div class="admin-panel-head">
+          <div>
+            <p class="eyebrow">Kontakti</p>
+            <h2 class="admin-section-title">Newsletter prijave</h2>
+          </div>
+        </div>
+        <div class="admin-feed" id="adminNewsletterFeed"></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

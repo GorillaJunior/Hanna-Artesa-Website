@@ -13,6 +13,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
+  <script src="site-data.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -23,18 +24,49 @@
       </a>
 
       <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
-        <a href="#shop">Prodavnica</a>
+        <a href="shop.html">Prodavnica</a>
         <a href="#story">Nasa prica</a>
         <a href="#collections">Kolekcije</a>
         <a href="#contact">Kontakt</a>
       </nav>
 
       <div class="header-actions">
-        <button class="btn btn-secondary header-btn" type="button">Kupi sada</button>
+        <button class="cart-button header-btn" id="cartToggle" type="button" aria-label="Otvori korpu">
+          <span class="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M3 5h2l2.2 9.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7.1" />
+              <circle cx="10" cy="19" r="1.7" />
+              <circle cx="17" cy="19" r="1.7" />
+            </svg>
+          </span>
+          <span class="cart-copy">
+            <span class="cart-label">Korpa</span>
+            <span class="cart-total" data-cart-total>0 RSD</span>
+          </span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
         <button class="menu-toggle" id="menuToggle" aria-label="Otvori meni" type="button">&#9776;</button>
       </div>
     </div>
   </header>
+
+  <div class="cart-drawer" id="cartDrawer" hidden>
+    <button class="cart-backdrop" data-cart-close type="button" aria-label="Zatvori korpu"></button>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-head">
+        <h2 class="cart-title" id="cartTitle">Korpa</h2>
+        <button class="cart-close" data-cart-close type="button" aria-label="Zatvori korpu">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-empty" id="cartEmpty">Korpa je trenutno prazna.</p>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Ukupno</span>
+          <strong id="cartTotalValue">0 RSD</strong>
+        </div>
+      </div>
+    </aside>
+  </div>
 
   <main>
     <section class="container hero">
@@ -70,12 +102,11 @@
       </div>
 
       <div>
-        <div class="placeholder tall">
-          <div class="placeholder-inner">
-            <div class="placeholder-badge"></div>
-            <p class="placeholder-label">Glavna fotografija</p>
-          </div>
-        </div>
+        <img
+          class="hero-visual-image"
+          src="Slike/Staticne slike/Glavna Fotografija.png"
+          alt="Glavna fotografija Hanna Artesa kolekcije"
+        >
       </div>
     </section>
 
@@ -204,7 +235,7 @@
       <div>
         <p class="footer-head">Prodavnica</p>
         <div class="footer-links">
-          <a href="#shop">Najprodavanije</a>
+          <a href="shop.html">Najprodavanije</a>
           <a href="#collections">Kolekcije</a>
           <a href="#">Ideje za poklon</a>
           <a href="#">Novi proizvodi</a>
