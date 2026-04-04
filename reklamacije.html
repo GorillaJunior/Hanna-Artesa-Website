@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Artesa | Reklamacije</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="info-page reklamacije-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-home" href="index.html" aria-label="Hanna Artesa">
+        <img class="brand-logo" src="logo.png" alt="Hanna Artesa logo">
+      </a>
+
+      <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Zene</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=torbe">Torbe</a>
+            <a href="shop.html?filter=kape">Kape</a>
+            <a href="shop.html?filter=carape">Carape</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Deca</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=igracke">Igracke</a>
+          </div>
+        </div>
+        <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button header-btn" id="cartToggle" type="button" aria-label="Otvori korpu">
+          <span class="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M3 5h2l2.2 9.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7.1" />
+              <circle cx="10" cy="19" r="1.7" />
+              <circle cx="17" cy="19" r="1.7" />
+            </svg>
+          </span>
+          <span class="cart-copy">
+            <span class="cart-label">Korpa</span>
+            <span class="cart-total" data-cart-total>0 RSD</span>
+          </span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otvori meni" type="button">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-drawer" id="cartDrawer" hidden>
+    <button class="cart-backdrop" data-cart-close type="button" aria-label="Zatvori korpu"></button>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-head">
+        <h2 class="cart-title" id="cartTitle">Korpa</h2>
+        <button class="cart-close" data-cart-close type="button" aria-label="Zatvori korpu">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-empty" id="cartEmpty">Korpa je trenutno prazna.</p>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Ukupno</span>
+          <strong id="cartTotalValue">0 RSD</strong>
+        </div>
+        <a class="btn btn-primary cart-checkout-link" href="placanje.html">Placanje</a>
+      </div>
+    </aside>
+  </div>
+
+  <main class="info-main">
+    <section class="delivery-hero">
+      <div class="container delivery-hero-grid">
+        <div class="delivery-hero-copy">
+          <p class="eyebrow">Informacije</p>
+          <h1 class="section-title">Reklamacije</h1>
+          <p class="story-text">
+            Svaki kupac ima pravo na jednostrani raskid ugovora o kupovini iz bilo kog razloga u roku od 14 dana od dana prijema pošiljke. Jedini preduslov je da roba nije korišćena i da je originalno zapakovana i vraćena u pakovanju u kom je isporučena i sa fiskalnim računom i zapisnikom koji dobijate uz svaku pošiljku.
+          </p>
+        </div>
+
+        <aside class="delivery-summary-card" aria-label="Kratak pregled reklamacija">
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Raskid ugovora</span>
+            <strong>14 dana</strong>
+          </div>
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Odgovor na reklamaciju</span>
+            <strong>8 dana</strong>
+          </div>
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Rok rešavanja</span>
+            <strong>15 dana</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section delivery-content">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <p class="eyebrow">Saobraznost</p>
+          <h2 class="delivery-title">Zakonski rokovi</h2>
+          <p class="story-text">
+            Hanna Artesa je odgovoran za nesaobraznost ugovoru koja se pojavi u roku od 2 (dve) godine, od dana prelaska rizika na kupca. Ako nesaobraznost nastane u roku od 6 (šest) meseci od dana prelaska rizika na kupca, pretpostavlja se da je nesaobraznost postojala u trenutku prelaska rizika, osim ako je to u suprotnosti sa prirodom robe i prirodom određene nesaobraznosti. Kod prodaje polovne robe (OUTLET), prodavac odgovara za nesaobraznost robe u roku od 1 (jedne) godine.
+          </p>
+        </article>
+
+        <article class="delivery-card">
+          <p class="eyebrow">Ograničenja</p>
+          <h2 class="delivery-title">Šta saobraznost ne pokriva</h2>
+          <p class="story-text">
+            Saobraznost ne pokriva nedostatke, oštećenja i kvarove nastale nepravilnim i nestručnim rukovanjem proizvodom. U nepravilno rukovanje su uključeni i propusti prilikom montiranja rezervnog dela. Pravo na saobraznost kupac gubi i u slučaju neovlašćenog popravljanja proizvoda, kao i popravljanjem od strane trećeg lica koje nije ovlašćeno od strane Prodavca ili proizvođača.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Podnošenje zahteva</p>
+          <h2 class="delivery-title">Kako da podnesete reklamaciju</h2>
+          <p class="story-text">
+            Ukoliko želite da podnesete zahtev za reklamaciju, to možete učiniti putem mejla info@hannaartesa.rs . Izuzetno je bitno da svi podaci budu tačno popunjeni, kako bi se ubrzao i olakšao prosec razmatranja reklamacije. Zahtev za reklamaciju podnosite samo isključivo u slučaju mehaničkog/fizičkog oštećenja (nesaobraznosti) proizvoda. Ukoliko vam je isporučena pogrešna roba, koju niste uopšte poručili, molimo vas da nas kontaktirate putem telefona ili mejla koji se nalazi u delu INFORMACIJE.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Rokovi</p>
+          <h2 class="delivery-title">Odgovor i rešavanje reklamacije</h2>
+          <p class="story-text">
+            Vaš zahtev za reklamacijom biće uzet u razmatranje u najkraćem mogućem vremenskom periodu i odgovor ćete dobiti pisanim ili elektronskim putem od službe za reklamacije, najkasnije u roku od 8 (osam) dana od dana podnošenja zahteva. Odgovor na reklamaciju mora da sadrži odluku da li se uvažava reklamacija ili ne, kao i obrazloženje, konkretan predlog i rok za rešavanje. Rok ne može da bude duži od 15 dana, od dana podnošenja reklamacije.
+          </p>
+          <p class="story-text">
+            Rok za rešavanje reklamacije prekida se kada potrošač primi odgovor prodavca i počinje da teče iznova kada prodavac primi izjašnjenje potrošača na odgovor prodavca. Potrošač je dužan da se izjasni na odgovor prodavca najkasnije u roku od tri dana od dana prijema odgovora prodavca. Smatraće se da potrošač nije saglasan sa predlogom prodavca ukoliko se ne izjasni u roku od tri dana.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Odbijanje reklamacije</p>
+          <h2 class="delivery-title">U slučaju odbijanja reklamacije prodavac je dužan da:</h2>
+          <ul class="delivery-steps">
+            <li>– pruži odgovarajuće obaveštenje potrošaču u slučaju odbijanja reklamacije, obrazloženje prodavca u slučaju neprihvatanja reklamacije.</li>
+            <li>– da potrošača sveobuhvatno obavesti o mogućnosti rešavanja spora vansudskim putem, kao i o nadležnim telima za vansudsko rešavanje potrošačkih sporova.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <p class="eyebrow">Troškovi</p>
+          <h2 class="delivery-title">Slanje i transport</h2>
+          <p class="story-text">
+            Troškovi slanja prilikom vraćanja se računaju na osnovu veličine i mase paketa koji kupac vraća po cenovniku kurirske službe po kojoj se šalje. Trošak transporta prilikom povrata ili zamene robe snosi Hanna Artesa.
+          </p>
+        </article>
+
+        <article class="delivery-card">
+          <p class="eyebrow">Garancija</p>
+          <h2 class="delivery-title">Reklamacija nakon 2 godine</h2>
+          <p class="story-text">
+            Ukoliko je potrošač za kupljeni proizvod dobio garanciju i ako se reklamacija izjavljuje nakon proteka 2 godine od dana kupovine, potrošač je dužan da reklamaciju izjavi davaocu garancije.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Reklamacija oštećenog paketa</p>
+          <h2 class="delivery-title">Reklamacija oštećenog paketa</h2>
+          <p class="story-text">
+            Ukoliko vam je pošiljka stigla oštećena, potrebno je da odmah od kurira tražite da napravi reklamacioni zapisnik. Na osnovu njega ostvarujete pravo na refundaciju štete od strane kurirske službe. Ako je paket fizički oštećen, pred kurirom ga otvorite i slikajte ga, da bi imali nepobitan dokaz o oštećenju robe. U slučaju da se kurir protivi, pozovite nas, a mi ćemo odmah kontaktirati centralu kurirske službe. Nakon što utvrdite da je roba oštećena, neophodno je da vam kurir popuni i ostavi Zapisnik o oštećenju robe, jer je zapisnik jedini validan dokument pomoću koga možemo da potražujemo refundaciju novca za oštećenu robu. Sva roba koja izlazi iz našeg magacina je uredno i propisno spakovana u odgovarajuće pakete, a paketi su obeleženi odgovarajućim nalepnicama kako bi se sa paketima dalje, u centrima kurirskih službi, pravilno rukovalo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Povrat novca</p>
+          <h2 class="delivery-title">Povrat novca</h2>
+          <p class="story-text">
+            Kupac ima pravo na jednostrani raskid ugovora u roku od 14 dana, od dana zaključenja ugovora o kupovini, bez navođenja razloga i dodatnih troškova. Prilikom povraćaja kupljenih proizvoda neophodno je vratiti ih u ispravnom i nekorišćenom stanju, sa fiskalnim računom i svom pratećom dokumentacijom, uredno popunjenom. Direktne troškove vraćanja robe u slučaju odustanka od porudžbenice snosi Hanna Artesa. U slučaju jednostranog raskida ugovora od strane kupca, Hanna Artesa će po prijemu vraćene robe, a nakon konstatacije komisije da je roba vraćena u nekorišćenom stanju i bez oštećenja, bez odlaganja izvršiti povrat sredstava kupcu.
+          </p>
+          <p class="story-text">
+            U slučaju da se radi povrat novca usled uvažene reklamacije u garantnom roku i/ili raskida ugovora od strane kupca u propisanom roku, potrebno je da nam kupac dostavi broj svog tekućeg računa u banci ili pošti i sredstva vraćamo na njegov račun.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <p class="eyebrow">Evidencija</p>
+          <h2 class="delivery-title">Evidencija primljenih reklamacija</h2>
+          <p class="story-text">
+            Prodavac je dužan da vodi evidenciju primljenih reklamacija i da je čuva najmanje dve godine od dana podnošenja reklamacija potrošača. Prodavac je dužan da potrošaču bez odlaganja izda pisanu potvrdu ili elektronskim putem potvrdi prijem reklamacije, odnosno saopšti broj pod kojim je zavedena njegova reklamacija u evidenciji primljenih reklamacija.
+          </p>
+        </article>
+
+        <article class="delivery-card">
+          <p class="eyebrow">Posle isteka roka</p>
+          <h2 class="delivery-title">Otklanjanje nesaobraznosti posle isteka zakonskog roka</h2>
+          <p class="story-text">
+            Posle isteka zakonskog roka saobraznosti (2 godine), potrošač je sam odgovoran za slanje robe na servis. U tom slučaju samo on snosi troškove slanja i primanja robe i troškove popravke. Spisak servisa isporučuje se zajedno sa dokumentacijom koja ide uz robu a pojedini proizvođači daju samo podatke o centralnom ovlašćenom servisu koji kupca salje preusmerava na njemu najbliži ovlašćeni servis. Kompanija Hanna Artesa će rado izaći u susret potrošačima i pomoći im oko informisanja o dostupnim servisima posle isteka zakonskog perioda saobraznosti.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="eyebrow footer-kicker">Hanna Artesa</p>
+        <h2 class="footer-title">Rucno radjeno sa toplinom</h2>
+        <p class="footer-copy">
+          Koncept pocetne stranice inspirisan mekim butik stilom rucnog rada, spreman za tvoje slike i sadrzaj.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-head">Prodavnica</p>
+        <div class="footer-links">
+          <a href="shop.html">Najprodavanije</a>
+          <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+          <a href="#">Ideje za poklon</a>
+          <a href="#">Novi proizvodi</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Korisni linkovi</p>
+        <div class="footer-links">
+          <a href="politika-privatnosti.html">Politika privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi korišćenja</a>
+          <a href="reklamacije.html" aria-current="page">Reklamacije</a>
+          <a href="dostava.html">Dostava</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Kontakt</p>
+        <div class="contact-list">
+          <p class="contact-item">hello@hannaartesa.com</p>
+          <p class="contact-item">@hannaartesa</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

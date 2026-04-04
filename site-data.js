@@ -89,6 +89,7 @@
     analytics: "hanna-artesa-analytics-v1",
     session: "hanna-artesa-session-v1",
   };
+  const VALID_CATEGORIES = ["torbe", "kape", "carape", "igracke", "odeca", "dekor"];
 
   function clone(value) {
     return JSON.parse(JSON.stringify(value));
@@ -116,15 +117,59 @@
       .replace(/^-+|-+$/g, "");
   }
 
+  function inferCategory(product) {
+    const source = `${product?.name || ""} ${product?.id || ""}`.toLowerCase();
+
+    if (
+      source.includes("torba") ||
+      source.includes("torbica") ||
+      source.includes("ceger") ||
+      source.includes("ranac")
+    ) {
+      return "torbe";
+    }
+
+    if (source.includes("kapa")) {
+      return "kape";
+    }
+
+    if (source.includes("carape")) {
+      return "carape";
+    }
+
+    if (
+      source.includes("dzemper") ||
+      source.includes("kupaci")
+    ) {
+      return "odeca";
+    }
+
+    return "igracke";
+  }
+
   function normalizeProduct(product, index) {
     const now = new Date().toISOString();
     const priceValue = Number(product.priceValue);
+    const resolvedCategory = product.category === "odeca"
+      ? inferCategory(product)
+      : product.category;
+    const images = Array.isArray(product.images)
+      ? product.images.filter((value) => typeof value === "string" && value.trim())
+      : [];
+    const primaryImage = images[0] || product.image || "";
 
     return {
       id: product.id || `product-${index + 1}`,
       name: product.name || `Proizvod ${index + 1}`,
       priceValue: Number.isFinite(priceValue) ? priceValue : 0,
-      image: product.image || "",
+      image: primaryImage,
+      images: images.length ? images : (primaryImage ? [primaryImage] : []),
+      description: product.description || "",
+      material: product.material || "",
+      dimensions: product.dimensions || "",
+      category: VALID_CATEGORIES.includes(resolvedCategory)
+        ? resolvedCategory
+        : inferCategory(product),
       status: product.status === "archived" ? "archived" : "active",
       createdAt: product.createdAt || now,
       updatedAt: product.updatedAt || now,
@@ -332,6 +377,7 @@
 
   window.HannaStore = {
     slugify,
+    inferCategory,
     getProducts,
     getVisibleProducts,
     saveProducts,

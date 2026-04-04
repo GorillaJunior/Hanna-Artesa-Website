@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Artesa | Politika privatnosti</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="info-page privacy-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-home" href="index.html" aria-label="Hanna Artesa">
+        <img class="brand-logo" src="logo.png" alt="Hanna Artesa logo">
+      </a>
+
+      <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Zene</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=torbe">Torbe</a>
+            <a href="shop.html?filter=kape">Kape</a>
+            <a href="shop.html?filter=carape">Carape</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Deca</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=igracke">Igracke</a>
+          </div>
+        </div>
+        <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button header-btn" id="cartToggle" type="button" aria-label="Otvori korpu">
+          <span class="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M3 5h2l2.2 9.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7.1" />
+              <circle cx="10" cy="19" r="1.7" />
+              <circle cx="17" cy="19" r="1.7" />
+            </svg>
+          </span>
+          <span class="cart-copy">
+            <span class="cart-label">Korpa</span>
+            <span class="cart-total" data-cart-total>0 RSD</span>
+          </span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otvori meni" type="button">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-drawer" id="cartDrawer" hidden>
+    <button class="cart-backdrop" data-cart-close type="button" aria-label="Zatvori korpu"></button>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-head">
+        <h2 class="cart-title" id="cartTitle">Korpa</h2>
+        <button class="cart-close" data-cart-close type="button" aria-label="Zatvori korpu">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-empty" id="cartEmpty">Korpa je trenutno prazna.</p>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Ukupno</span>
+          <strong id="cartTotalValue">0 RSD</strong>
+        </div>
+        <a class="btn btn-primary cart-checkout-link" href="placanje.html">Placanje</a>
+      </div>
+    </aside>
+  </div>
+
+  <main class="info-main">
+    <section class="delivery-hero">
+      <div class="container delivery-hero-grid">
+        <div class="delivery-hero-copy">
+          <p class="eyebrow">Informacije</p>
+          <h1 class="section-title">Politika privatnosti</h1>
+          <p class="story-text">
+            Hanna Artesa poštuje Vašu privatnost. Bez obzira na to da li ste sa Hanna Artesa u kontaktu oko proizvoda i/ili usluga kao kupac, korisnik, predstavnik javnosti itd.
+          </p>
+        </div>
+
+        <aside class="delivery-summary-card" aria-label="Kontakt podaci">
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Web adresa</span>
+            <strong>www.hannaartesa.rs</strong>
+          </div>
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Kontakt e-mail</span>
+            <strong>info@hannaartesa.rs</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section delivery-content">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <p class="story-text">
+            Imate pravo na zaštitu ličnih podataka: imena, adrese, telefonskog broja, adrese e-pošte i drugih podataka kao što su, IP adresa, geolokacijski podaci, itd.
+          </p>
+          <p class="story-text">
+            U Opštoj politici zaštite privatnosti i ličnih podataka Hanna Artesa, opisuje se postupak prikupljanja Vaših ličnih podataka i svrha u koju se oni prikupljaju, način korišćenja Vaših ličnih podataka, sa kim se Vaši lični podaci dele, kako se štite i koje su Vaše mogućnosti u opsegu zaštite ličnih podataka.
+          </p>
+          <p class="story-text">
+            Ova politika se odnosi na obradu Vaših ličnih podataka u okviru različitih usluga, alata, aplikacija, webmesta, portala, (internet) promocija, marketinških akcija, sponzorisanih platformi na društvenim medijima itd… koje pružamo ili kojima upravljamo mi ili treća strana u naše ime.
+          </p>
+          <p class="story-text">
+            Ova politika sadrži opšta pravila i objašnjenja. Za određene usluge, alate, aplikacije, web-mesta, portale, (internet) promocije, marketinške akcije, sponzorisane platforme na društvenim medijima, itd… koje nudi Hanna Artesa ili njima upravlja treća strana u ime Hanna Artesa, ova politika može da se dopunjava posebnim, odvojenim obaveštenjima o zaštiti privatnosti. O tim posebnim obaveštenjima o zaštiti privatnosti obavestićemo Vas na primeren način svaki put kada prikupljamo Vaše lične podatke u gore navedenim aktivnostima (na primer na web-mestima, portalima, pojedinačnim komunikacijskim uslugama, e-novostima, podsetnicima, istraživanjima, ponudama, događajima, itd.).
+          </p>
+          <p class="story-text">
+            Ova politika se primenjuje na sve Vaše lične podatke, koje prikuplja Hanna Artesa i/ili Hanna Artesa ovlašćeni rešavaoci reklamacija i sl., zajedno navedeni u ovoj politici kao „Hanna Artesa“, „mi“, „nas“ i „naš“.
+          </p>
+          <p class="story-text">
+            Pri kraju ove politike možete pronaći neke definicije ključnih pojmova, upotrebljenih u ovoj politici (na primer lični podaci, obrada, rukovalac obradom, …).
+          </p>
+        </article>
+
+        <aside class="delivery-card">
+          <p class="eyebrow">Kontakt</p>
+          <h2 class="delivery-title">Web adresa i e-mail</h2>
+          <p class="story-text">Web adresa: www.hannaartesa.rs</p>
+          <p class="story-text">Kontakt e-mail: info@hannaartesa.rs</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">Kome se možete obratiti ako imate pitanja ili zahtev u pogledu ličnih podataka?</h2>
+          <p class="story-text">
+            Imenovali smo lice i odredili posebnu kontakt adresu za zaštitu ličnih podataka koja obrađuje Vaša pitanja ili zahteve u vezi s ovom politikom ili posebnim obaveštenjem o zaštiti privatnosti, o Vašim ličnim podacima i njihovoj obradi. Za sva pitanja, zahteve ili pritužbe u vezi sa primenom ove politike ili za ostvarivanje Vaših prava na temelju ove politike možete se obratiti kontakt osobi za zaštitu ličnih podataka:
+          </p>
+          <p class="story-text">Kontakt e-mail: info@hannaartesa.rs</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">Obrada Vaših ličnih podataka: koje podatke prikupljamo i po kojoj pravnoj osnovi:</h2>
+          <p class="story-text">
+            Uvek ćete biti jasno obavešteni koje lične podatke prikupljamo. Te informacije ćemo vam predočiti uz odvojeno obaveštenje o zaštiti privatnosti koje će biti uključeno u određene usluge.
+          </p>
+          <p class="story-text">
+            U skladu sa važećim propisima o zaštiti ličnih podataka možemo da obrađujemo Vaše lične podatke ako:
+          </p>
+          <ul class="delivery-steps">
+            <li>– ste dali saglasnost za određene svrhe obrade (kao što su navedene u obaveštenju o zaštiti privatnosti koje se odnosi na određenu obradu). U svakom trenutku imate pravo da povučete svoju saglasnost bez navođenja razloga</li>
+            <li>– je obrada Vaših ličnih podataka potrebna za ispunjenje uslova ugovora čija ste ugovorna stranka</li>
+            <li>– takvom obradom sledimo legitimne interese, npr. Hanna Artesa može određene lične podatke da obrađuje u svrhu sprečavanja zloupotrebe, odnosno prevare, pri utvrđivanju prava na temelju garancije, kako bi u određenim primerima proverila Vaše zadovoljstvo njenim proizvodima i uslugama. O legitimnim interesima obavestićemo Vas u obaveštenju o zaštiti privatnosti povezanoj sa tom posebnom obradom</li>
+            <li>– je to potrebno za ispunjavanje naših zakonskih obaveza, npr. prilikom kupovine,(plaćanje, mesto i datum preuzimanja, itd.), reklamacije, vraćanje proizvoda kupljenih na daljinu, servisiranja, ostvarivanja drugih prava potrošača po osnovu nesaobraznosti ili garancije.</li>
+          </ul>
+          <p class="story-text">
+            Podatke koje priklupljamo: Email, ime i prezime, broj telefona, ip adresa, adresa, mesto stanovanja.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">U koje svrhe obrađujemo Vaše lične podatke i oblikovanje profila:</h2>
+          <p class="story-text">
+            Lične podatke obrađujemo samo u određene, izričito potvrđene i legitimne svrhe i nećemo ih obrađivati na način koji nije u skladu sa tim svrhama.
+          </p>
+          <p class="story-text">
+            Lične podatke obrađujemo u svrhu kreiranja vašeg naloga na našem web shopu, slanja paketa, obrade transakcija kao i komunikacije sa korisnicima.
+          </p>
+          <p class="story-text">Korisnici Vaših podataka:</p>
+          <p class="story-text">Kontakt e-mail: info@hannaartesa.rs</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <h2 class="delivery-title">Briga o tačnosti i ažurnosti Vaših ličnih podataka</h2>
+          <p class="story-text">
+            Važno nam je da su Vaši podaci uvek tačni i ažurirani. Obavestite nas o svim promenama ili greškama u našim zapisima Vaših ličnih podataka tako što ćete nas kontaktirati preko kontakt osobe za zaštitu ličnih podataka. Odredićemo razumne mere da se svi netačni ili neažurirani lični podaci izbrišu ili isprave.
+          </p>
+        </article>
+
+        <article class="delivery-card">
+          <h2 class="delivery-title">Pristup svojim ličnih podacima</h2>
+          <p class="story-text">
+            Imate pravo pristupa svojim ličnim podacima koje obrađujemo i ako su Vaši lični podaci netačni ili nepotpuni možete da zahtevate ispravku ili brisanje ličnih podataka.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <h2 class="delivery-title">Koliko dugo čuvamo Vaše lične podatke</h2>
+          <p class="story-text">
+            Vaše lične podatke čuvamo u skladu sa važećim propisima o zaštiti ličnih podataka.
+          </p>
+          <p class="story-text">
+            Vaše lične podatke čuvamo samo onoliko koliko je potrebno za postizanje svrhe u koju obrađujemo Vaše lične podatke, razdoblju koje je određeno zakonom ili u razdoblju koje je potrebno za ispunjavanje uslova ugovora, uključujući zahteve za garancijom i moguće zahteve.
+          </p>
+          <p class="story-text">
+            Lične podatke koje obrađujemo na osnovu Vašeg ličnog dopuštenja čuvamo trajno, do Vašeg opoziva, osim ako je ranije već postignuta svrha u koju su lični podaci prikupljeni.
+          </p>
+        </article>
+
+        <article class="delivery-card">
+          <h2 class="delivery-title">Zaštita Vaših ličnih podataka</h2>
+          <p class="story-text">
+            Sprovodimo tehničke i organizacione sigurnosne mere kako bi zaštitili Vaše lične podatke od ilegalnog ili neovlašćenog pristupa ili upotrebe, kao i od slučajnog gubitka ili uništavanja. Navedene mere se sprovode uzimajući u obzir našu IT infrastrukturu, potencijalni uticaj na Vašu privatnost i troškove izvođenja i u skladu sa trenutnim standardima i praksom u području zaštite podataka.
+          </p>
+          <p class="story-text">
+            Obradu Vaših ličnih podataka poverićemo samo onim ovlašćenim osobama (trećoj strani) koje poštuju navedene tehničke i organizacione mere za zaštitu ličnih podataka.
+          </p>
+          <p class="story-text">
+            Osiguranje zaštite podataka znači brigu o poverljivosti, celovitosti i dostupnosti Vaših ličnih podataka.
+          </p>
+          <p class="story-text">
+            Naši sigurnosni postupci uključuju: zaštitu pristupa, sisteme za sigurnosno kopiranje, nadzor, revizije i održavanje, upravljanje sigurnosnim incidentima i kontinuirano poslovanje, itd.
+          </p>
+          <ul class="delivery-steps">
+            <li>(a) Poverljivost: Vaše lične podatke zaštitićemo od nedopuštenog otkrivanja trećim stranama.</li>
+            <li>(b) Celovitost: Vaše lične podatke zaštitićemo od promena neovlašćenih trećih strana.</li>
+            <li>(c) Dostupnost: Pobrinućemo se da Vašim ličnim podacima mogu pristupiti samo ovlašćene osobe kada je to potrebno.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">Prosleđivanje ličnih podataka</h2>
+          <p class="story-text">
+            U pogledu svrhe prikupljanja Vaših ličnih podataka možemo ih proslediti, otkriti ili omogućiti pristup kategorijama korisnika navedenima u nastavku, a koji te podatke obrađuju u skladu sa navedenom svrhom. Od njih zahtevamo da uvek budu u skladu sa važećim pravnim propisima, pravilima zaštite ličnih podataka i da posvećuju izuzetnu pažnju poverljivosti Vaših ličnih podataka.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <h2 class="delivery-title">Odvojeni odnos sa prodavcima i serviserima</h2>
+          <p class="story-text">
+            Ako se povodom robe koju ste kupili kod nas, direktno obratite ovlašćenom serviseru ili uvozniku, ili ako im u vezi toga prosledite svoje lične podatke, između Vas i tog uvoznika ili servisera uspostavlja se odvojeni odnos. U tom slučaju su ti ovlašćeni trgovci ili serviseri su obrađivači Vaših ličnih podataka. Za sva pitanja ili zahteve u pogledu upotrebe Vaših ličnih podataka prikupljenih u tu svrhu od strane ovlašćenog uvoznika ili servisera obratite se direktno njima.
+          </p>
+        </article>
+
+        <article class="delivery-card">
+          <h2 class="delivery-title">Upotreba društvenih medija</h2>
+          <p class="story-text">
+            Ako se u Hanna Artesa (internet stranica, portal …) prijavite iz društvenih medija (na primer pomoću Vašeg Facebook naloga), Hanna Artesa će zabeležiti Vaše lične podatke dostupne na tim društvenim medijima, i Vaša upotreba tih medija znači da ste izričito saglasni sa prosleđivanjem svojih ličnih podataka koje je Hanna Artesa zabeležio pomoću svog alata. Ti društveni mediji imaju sopstvene uslove korišćenja kojih se morate pridržavati tokom njihove upotrebe.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">Vaše mogućnosti i prava:</h2>
+          <p class="story-text">
+            Želimo da budemo što transparentniji, pa vam stoga nudimo mogućnost odabira načina na koji želite da upotrebljavamo Vaše lične podatke.
+          </p>
+          <p class="story-text">Imate sledeća prava u vezi sa obradom vaših podataka o ličnosti:</p>
+          <ul class="delivery-steps">
+            <li>– Pravo da dobijete potvrdu da li obrađujemo vaše podatke o ličnosti</li>
+            <li>– Pravo pristupa vašim podacima o ličnosti</li>
+            <li>– Pravo na ispravku vaših podataka o ličnosti u slučaju greške</li>
+            <li>– Pravo da zahtevate prekid obrade vaših podataka o ličnosti</li>
+            <li>– Pravo na brisanje vaših podataka o ličnosti</li>
+            <li>– Pravo da zatražite prenos podataka o ličnosti kod drugog pružaoca usluge</li>
+          </ul>
+          <p class="story-text">Sva vaša prava možete ostvariti ako nas kontaktirate na sledeći način:</p>
+          <p class="story-text">Kontakt e-mail: info@hannaartesa.rs</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">Podaci o nadležnom organu u Republici Srbiji</h2>
+          <p class="story-text">
+            Nadležni organ za zaštitu podataka o ličnosti je Poverenik za informacije od javnog značaja i zaštitu podataka o ličnoosti Republike Srbije. Organu se možete obratiti na adresi Bulevar kralja Aleksandra 15, 11000 Beograd, Republika Srbija, mejlom na office@poverenik.rs ili telefonom na +381 11 3408 900.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">Politika upotrebe kolačića</h2>
+          <p class="story-text">
+            Kolačići su mali tekstualni fajlovi koji se čuvaju na Vašem računaru ili mobilnom uređaju obezbeđujući efikasnije funkcionisanje web sajtova i stranica.
+          </p>
+          <p class="story-text">
+            Kolačići omogućavaju našem sajtu da Vas prepozna i zapamti važne informacije kako bi Vam korišćenje sajta bilo udobnije.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">Kako treća lica koriste „kolačiće“ na Hanna Artesa sajtu?</h2>
+          <p class="story-text">
+            Kako bi obezbedila određene usluge na svom web sajtu, Hanna Artesa, može sarađivati sa trećim licima.
+          </p>
+          <p class="story-text">
+            Drugi oglašivači i ostale organizacije mogu koristiti svoje „kolačiće“ da bi prikupili informacije o Vašim aktivnostima na našem web sajtu. Ove informacije mogu koristiti trećem licu da prikaže oglase za koje veruje da će Vama biti od značaja na osnovu sadržaja koji ste gledali. Predmetni oglašivači mogu koristiti ove informacije u cilju utvrđivanja stepena efektivnosti svojih oglasa. „Kolačiće“ trećeg lica mi ne kontrolišemo, da biste ih onemogućili ili izbrisali molimo Vas da više informacija i instrukcije za onemogućavanje potražite na web stranici relevantnog trećeg lica.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <h2 class="delivery-title">Koje „kolačiće“ koristimo?</h2>
+          <p class="story-text">Kolačiće funkcionalnosti</p>
+          <p class="story-text">Kolačiće analitike</p>
+          <p class="story-text">Kolačiće marketinga i oglašavanja</p>
+          <p class="story-text">
+            Kolačići koje koristimo su trajni. Trajni kolačići ostaju na korisničkom uređaju u vremenskom periodu navedenom u kolačiću. Oni se aktiviraju svaki put kada korisnik poseti web lokaciju koja je kreirala taj određeni kolačić.
+          </p>
+          <p class="story-text">
+            Naši kolačići traju dok ih ne ukloni sami. Kolačiće koje koristimo možete izbrisati, blokirati ili promeniti podešavanja na Vašem pretraživaču.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="eyebrow footer-kicker">Hanna Artesa</p>
+        <h2 class="footer-title">Rucno radjeno sa toplinom</h2>
+        <p class="footer-copy">
+          Koncept pocetne stranice inspirisan mekim butik stilom rucnog rada, spreman za tvoje slike i sadrzaj.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-head">Prodavnica</p>
+        <div class="footer-links">
+          <a href="shop.html">Najprodavanije</a>
+          <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+          <a href="#">Ideje za poklon</a>
+          <a href="#">Novi proizvodi</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Korisni linkovi </p>
+        <div class="footer-links">
+          <a href="politika-privatnosti.html" aria-current="page">Politika privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi korišćenja</a>
+          <a href="reklamacije.html">Reklamacije</a>
+          <a href="dostava.html">Dostava</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Kontakt</p>
+        <div class="contact-list">
+          <p class="contact-item">hello@hannaartesa.com</p>
+          <p class="contact-item">@hannaartesa</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Artesa | Dostava</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="info-page delivery-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-home" href="index.html" aria-label="Hanna Artesa">
+        <img class="brand-logo" src="logo.png" alt="Hanna Artesa logo">
+      </a>
+
+      <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Zene</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=torbe">Torbe</a>
+            <a href="shop.html?filter=kape">Kape</a>
+            <a href="shop.html?filter=carape">Carape</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Deca</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=igracke">Igracke</a>
+          </div>
+        </div>
+        <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button header-btn" id="cartToggle" type="button" aria-label="Otvori korpu">
+          <span class="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M3 5h2l2.2 9.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7.1" />
+              <circle cx="10" cy="19" r="1.7" />
+              <circle cx="17" cy="19" r="1.7" />
+            </svg>
+          </span>
+          <span class="cart-copy">
+            <span class="cart-label">Korpa</span>
+            <span class="cart-total" data-cart-total>0 RSD</span>
+          </span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otvori meni" type="button">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-drawer" id="cartDrawer" hidden>
+    <button class="cart-backdrop" data-cart-close type="button" aria-label="Zatvori korpu"></button>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-head">
+        <h2 class="cart-title" id="cartTitle">Korpa</h2>
+        <button class="cart-close" data-cart-close type="button" aria-label="Zatvori korpu">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-empty" id="cartEmpty">Korpa je trenutno prazna.</p>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Ukupno</span>
+          <strong id="cartTotalValue">0 RSD</strong>
+        </div>
+        <a class="btn btn-primary cart-checkout-link" href="placanje.html">Placanje</a>
+      </div>
+    </aside>
+  </div>
+
+  <main class="info-main">
+    <section class="delivery-hero">
+      <div class="container delivery-hero-grid">
+        <div class="delivery-hero-copy">
+          <p class="eyebrow">Dostava</p>
+          <h1 class="section-title">Pakete šaljemo:</h1>
+          <p class="story-text">
+            Kurirskom službom PostExpress i AKS
+          </p>
+        </div>
+
+        <aside class="delivery-summary-card" aria-label="Kratak pregled dostave">
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Kurirske službe</span>
+            <strong>PostExpress i AKS</strong>
+          </div>
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Rok isporuke</span>
+            <strong>2-5 radnih dana</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section delivery-content">
+      <div class="container delivery-layout">
+        <article class="delivery-card delivery-card-main">
+          <p class="eyebrow">Slanje paketa</p>
+          <h2 class="delivery-title">Informacije o isporuci</h2>
+          <p class="story-text">
+            Sva roba poručena do 12h biće otpremljena iz našeg magacina istog dana. Robu koju poručite posle 12h pakujemo i šaljemo narednog dana.
+          </p>
+          <p class="story-text">
+            Kurirska služba preuzima pakete u našoj firmi isključivo radnim danima (ponedeljak – petak).
+          </p>
+          <p class="story-text">
+            Paketi poslati u petak preko kurirske službe, biće na isporuci od strane kurira prvi radni dan tj. u PONEDELJAK.
+          </p>
+          <p class="story-text">
+            Rok isporuke poručene robe je 2-5 radnih dana. Troškovi poštarine biće uračunati u celokupni otkup i isti će biti izražen na fiskalnom računu.
+          </p>
+        </article>
+
+        <aside class="delivery-card delivery-card-side">
+          <p class="eyebrow">Napomena</p>
+          <h2 class="delivery-title">Važne informacije</h2>
+          <p class="story-text">
+            NAPOMENA: Sve cene su izražene sa PDV- om.
+          </p>
+          <p class="story-text">
+            Ukoliko se desi da vam roba u navedenom roku ne bude isporučena, možete nas kontaktirati na neke od naših telefona ili mail adresa (kontakt) kako bismo problem što pre rešili.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Reklamacije</p>
+          <h2 class="delivery-title">Pravilnik o reklamaciji robe</h2>
+          <p class="story-text">
+            U slučaju potrebe za reklamiranjem oštećene robe koja vam je isporučena nekom od brzih pošti sa kojima sarađujemo – „PostExpress i AKS“ molimo vas da obratite pažnju na sledeće:
+          </p>
+          <ol class="delivery-steps">
+            <li>
+              Ukoliko je roba fizički oštećena, bilo bi vrlo poželjno da je na licu mesta pred kurirom otvorite i uslikate kako bismo imali nepobitan dokaz o oštećenju. U slučaju da se kurir protivi navedenom, pozovite na neki od naših telefonskih brojeva, a mi ćemo odmah kontaktirati reklamacije u centralama kurirskih službi.
+            </li>
+            <li>
+              Nakon što utvrdite da je roba oštećena, neophodno je da vam kurir popuni i da zapisnik o oštećenju robe, jer je zapisnik jedini validan dokument prema kom možemo da potražujemo refundaciju novca za oštećenu robu.
+            </li>
+          </ol>
+          <div class="delivery-note">
+            Sva roba koja izlazi iz našeg magacina je uredno i propisno spakovana u odgovarajuće pakete, a paketi su obeleženi odgovarajućim nalepnicama kako bi se sa paketima dalje, u centrima kurirskih službi, pravilno rukovodilo.
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="eyebrow footer-kicker">Hanna Artesa</p>
+        <h2 class="footer-title">Rucno radjeno sa toplinom</h2>
+        <p class="footer-copy">
+          Koncept pocetne stranice inspirisan mekim butik stilom rucnog rada, spreman za tvoje slike i sadrzaj.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-head">Prodavnica</p>
+        <div class="footer-links">
+          <a href="shop.html">Najprodavanije</a>
+          <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+          <a href="#">Ideje za poklon</a>
+          <a href="#">Novi proizvodi</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Korisni linkovi</p>
+        <div class="footer-links">
+          <a href="politika-privatnosti.html">Politika privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi korišćenja</a>
+          <a href="reklamacije.html">Reklamacije</a>
+          <a href="dostava.html" aria-current="page">Dostava</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Kontakt</p>
+        <div class="contact-list">
+          <p class="contact-item">hello@hannaartesa.com</p>
+          <p class="contact-item">@hannaartesa</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

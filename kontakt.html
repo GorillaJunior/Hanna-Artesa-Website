@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Artesa | Kontakt</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="info-page contact-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-home" href="index.html" aria-label="Hanna Artesa">
+        <img class="brand-logo" src="logo.png" alt="Hanna Artesa logo">
+      </a>
+
+      <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Zene</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=torbe">Torbe</a>
+            <a href="shop.html?filter=kape">Kape</a>
+            <a href="shop.html?filter=carape">Carape</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Deca</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=igracke">Igracke</a>
+          </div>
+        </div>
+        <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+        <a href="kontakt.html" aria-current="page">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button header-btn" id="cartToggle" type="button" aria-label="Otvori korpu">
+          <span class="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M3 5h2l2.2 9.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7.1" />
+              <circle cx="10" cy="19" r="1.7" />
+              <circle cx="17" cy="19" r="1.7" />
+            </svg>
+          </span>
+          <span class="cart-copy">
+            <span class="cart-label">Korpa</span>
+            <span class="cart-total" data-cart-total>0 RSD</span>
+          </span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otvori meni" type="button">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-drawer" id="cartDrawer" hidden>
+    <button class="cart-backdrop" data-cart-close type="button" aria-label="Zatvori korpu"></button>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-head">
+        <h2 class="cart-title" id="cartTitle">Korpa</h2>
+        <button class="cart-close" data-cart-close type="button" aria-label="Zatvori korpu">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-empty" id="cartEmpty">Korpa je trenutno prazna.</p>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Ukupno</span>
+          <strong id="cartTotalValue">0 RSD</strong>
+        </div>
+        <a class="btn btn-primary cart-checkout-link" href="placanje.html">Placanje</a>
+      </div>
+    </aside>
+  </div>
+
+  <main class="info-main">
+    <section class="delivery-hero">
+      <div class="container delivery-hero-grid">
+        <div class="delivery-hero-copy">
+          <p class="eyebrow">Tu smo za vas</p>
+          <h1 class="section-title">Kontakt</h1>
+          <p class="story-text">
+            Za porudžbine, pitanja ili dodatne informacije možete nam pisati ili nas pronaći na društvenim mrežama.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section delivery-content">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <p class="eyebrow">Pišite nam</p>
+          <h2 class="delivery-title">Email kontakt</h2>
+          <p class="story-text">
+            Odgovaramo na pitanja o proizvodima, porudžbinama i dostupnosti.
+          </p>
+          <a class="email-window" href="mailto:hello@hannaartesa.com" aria-label="Pošalji email Hanna Artesa">
+            <span class="email-window-bar">
+              <span class="email-dot"></span>
+              <span class="email-dot"></span>
+              <span class="email-dot"></span>
+            </span>
+            <span class="email-window-body">
+              <span class="email-window-top">
+                <span class="email-chip">Nova poruka</span>
+                <span class="email-time">Email</span>
+              </span>
+              <span class="email-meta">
+                <span class="email-meta-row">
+                  <span class="email-meta-label">Za</span>
+                  <span class="email-address">hello@hannaartesa.com</span>
+                </span>
+                <span class="email-meta-row">
+                  <span class="email-meta-label">Tema</span>
+                  <span class="email-subject">Pitanje o porudžbini</span>
+                </span>
+              </span>
+              <span class="email-envelope">
+                <span class="email-envelope-paper"></span>
+              </span>
+              <span class="email-caption">Kliknite da odmah otvorite email i pošaljete poruku.</span>
+            </span>
+          </a>
+        </article>
+
+        <article class="delivery-card">
+          <p class="eyebrow">Zapratite nas</p>
+          <h2 class="delivery-title">Instagram</h2>
+          <p class="story-text">
+            Na našem Instagram profilu možete pratiti novitete, proizvode i aktuelne objave.
+          </p>
+          <div class="instagram-live" id="instagramFeed" data-instagram-profile-url="https://www.instagram.com/hanna_artesa_/" aria-live="polite">
+            <p class="instagram-status">Učitavanje Instagram profila...</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="eyebrow footer-kicker">Hanna Artesa</p>
+        <h2 class="footer-title">Rucno radjeno sa toplinom</h2>
+        <p class="footer-copy">
+          Koncept pocetne stranice inspirisan mekim butik stilom rucnog rada, spreman za tvoje slike i sadrzaj.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-head">Prodavnica</p>
+        <div class="footer-links">
+          <a href="shop.html">Najprodavanije</a>
+          <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+          <a href="#">Ideje za poklon</a>
+          <a href="#">Novi proizvodi</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Korisni linkovi</p>
+        <div class="footer-links">
+          <a href="politika-privatnosti.html">Politika privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi korišćenja</a>
+          <a href="reklamacije.html">Reklamacije</a>
+          <a href="dostava.html">Dostava</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Kontakt</p>
+        <div class="contact-list">
+          <p class="contact-item">hello@hannaartesa.com</p>
+          <p class="contact-item">@hannaartesa</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

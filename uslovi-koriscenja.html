@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Artesa | Uslovi korišćenja</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="info-page terms-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-home" href="index.html" aria-label="Hanna Artesa">
+        <img class="brand-logo" src="logo.png" alt="Hanna Artesa logo">
+      </a>
+
+      <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Zene</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=torbe">Torbe</a>
+            <a href="shop.html?filter=kape">Kape</a>
+            <a href="shop.html?filter=carape">Carape</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Deca</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=igracke">Igracke</a>
+          </div>
+        </div>
+        <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button header-btn" id="cartToggle" type="button" aria-label="Otvori korpu">
+          <span class="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M3 5h2l2.2 9.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7.1" />
+              <circle cx="10" cy="19" r="1.7" />
+              <circle cx="17" cy="19" r="1.7" />
+            </svg>
+          </span>
+          <span class="cart-copy">
+            <span class="cart-label">Korpa</span>
+            <span class="cart-total" data-cart-total>0 RSD</span>
+          </span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otvori meni" type="button">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-drawer" id="cartDrawer" hidden>
+    <button class="cart-backdrop" data-cart-close type="button" aria-label="Zatvori korpu"></button>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-head">
+        <h2 class="cart-title" id="cartTitle">Korpa</h2>
+        <button class="cart-close" data-cart-close type="button" aria-label="Zatvori korpu">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-empty" id="cartEmpty">Korpa je trenutno prazna.</p>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Ukupno</span>
+          <strong id="cartTotalValue">0 RSD</strong>
+        </div>
+        <a class="btn btn-primary cart-checkout-link" href="placanje.html">Placanje</a>
+      </div>
+    </aside>
+  </div>
+
+  <main class="info-main">
+    <section class="delivery-hero">
+      <div class="container delivery-hero-grid">
+        <div class="delivery-hero-copy">
+          <p class="eyebrow">Informacije</p>
+          <h1 class="section-title">Uslovi korišćenja</h1>
+          <p class="story-text">
+            Internet prodavnica Hanna Artesa posluje u skladu sa Zakonom o elektronskoj trgovini i svim ostalim važećim zakonima i pozitivnim propisima u Republici Srbiji. Detaljni uslovi kupovine navedeni su u daljem tekstu te Vas molimo da se upoznate sa njima pre nego što obavite kupovinu. Registracijom i korišćenjem sajta Hanna Artesa se smatra da ste u potpunosti upoznati i saglasni sa ovde navedenim Uslovima kupovine i da ih prihvatate. Ukoliko se sa istima ne slažete i ne prihvatate ih, molimo vas da ne koristite ovaj sajt.
+          </p>
+        </div>
+
+        <aside class="delivery-summary-card" aria-label="Kratak pregled uslova korišćenja">
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Način plaćanja</span>
+            <strong>Pouzećem</strong>
+          </div>
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Odustanak od ugovora</span>
+            <strong>14 dana</strong>
+          </div>
+          <div class="delivery-summary-item">
+            <span class="delivery-summary-label">Sporovi</span>
+            <strong>Vansudsko rešavanje</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section delivery-content">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <p class="eyebrow">Poručivanje</p>
+          <h2 class="delivery-title">Poručivanje robe:</h2>
+          <p class="story-text">
+            Poručivanje je prvi korak u kupovini preko našeg sajta. Pošto odaberete proizvode i smestite ih u korpu, možete obaviti poručivanje. Roba će biti rezervisana isključivo kada je porudžbina poslata tj porudžbina zaključena. Ukoliko artikli stoje u korpi i porudžbina nije poslata tj nije zaključena, ti artikli nisu rezervisani za vas i bilo koji drugi korisnik može da ih poruči. Nakon što pošaljete porudžbinu, u roku od nekoliko sekundi stiže Vam obaveštenje o Prijemu porudžbine na e-mail koji ste ostavili, sa dodeljenim brojem porudžbine, prikazom poručenih artikala i iznosom.
+          </p>
+          <p class="story-text">
+            Poručivanje mogu obavljati fizička i pravna lica.
+          </p>
+        </article>
+
+        <article class="delivery-card">
+          <p class="eyebrow">Kupovina</p>
+          <h2 class="delivery-title">Kako kupiti:</h2>
+          <p class="story-text">
+            Kupovina putem sajta Hanna Artesa je veoma jednostavna. Izaberite artikle koje želite i sledite link KORPA. Unesite svoje lične podatke i pošaljite nam porudžbinu. U slučaju trenutne nemogućnosti u isporuci traženog dela ili moguće zamene drugim proizvođačem, bićete kontaktirani radi dogovora. Kupovinu na našem web shopu, možete izvršiti kao registrovani korisnik ili kao GOST (jednokratna porudžbina).
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container delivery-layout">
+        <article class="delivery-card">
+          <p class="eyebrow">Plaćanje</p>
+          <h2 class="delivery-title">Način plaćanja na internet prodavnici:</h2>
+          <p class="story-text">
+            Robu poručenu putem našeg sajta Hanna Artesa plaćate pouzećem, odnosno plaćate gotovinom kuriru tražene brze pošte prilikom isporuke.
+          </p>
+        </article>
+
+        <article class="delivery-card">
+          <p class="eyebrow">Cene</p>
+          <h2 class="delivery-title">Napomena o cenama</h2>
+          <p class="story-text">
+            Sve cene na našoj prodavnici www.hannaartesa.rs sadrže obračunat PDV
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Odustanak</p>
+          <h2 class="delivery-title">Odustanak od ugovora:</h2>
+          <p class="story-text">
+            Svaki kupac ima pravo na jednostrani raskid ugovora o kupovini zaključenog na daljinu, iz bilo kog razloga u roku od 14 dana od dana prijema pošiljke. Jedini preduslov je da roba nije korišćena i da je originalno zapakovana i vraćena u pakovanju u kom je isporučena i sa fiskalnim računom i zapisnikom koji dobijate u e-mejlu koji ste ostavili (Obrazac o odustanku). Ovo pravo od odustanka od ugovora se NE odnosi na kupovinu u maloprodajnim objektima, s obzirom da to nije kupovina na daljinu i izvan poslovnih prostorija.
+          </p>
+          <p class="story-text">
+            Kupac je dužan da izjavu o odustanku kupovine pošalje poštom nazad na adresu firme.
+          </p>
+          <p class="story-text">
+            Internet prodavnica Hanna Artesa zadržava pravo da u svakom trenutku i bez prethodnog obaveštenja ukine ili izmeni bilo koji od ovde navedenih Uslova korišćenja sajta.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Opis proizvoda</p>
+          <h2 class="delivery-title">Opis proizvoda:</h2>
+          <p class="story-text">
+            Hanna Artesa nastoji da sve proizvode opiše što je tačnije moguće. Takođe, Hanna Artesa ne garantuje da su svi navedeni podaci u vezi proizvoda niti slike 100% tačni, kompletni, pouzdani i bez greške.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section delivery-content delivery-content-secondary">
+      <div class="container">
+        <article class="delivery-card delivery-card-wide">
+          <p class="eyebrow">Sporovi</p>
+          <h2 class="delivery-title">VANSUDSKO REŠAVANJE POTROŠAČKIH SPOROVA</h2>
+          <p class="story-text">
+            Potrošački spor može se rešiti postupkom vansudskog rešenja potrošačkih sporova. Kao trgovac smo dužni da vas obavestimo da smo po zakonu obavezni da učestvujemo u ovom postupku. Vansudsko rešavanje potrošačkih sporova obavlja se na transparentanm efikasan, brz i privlačan način pred telom za vansudsko rešavanje potrošačkih sporova. Ministarstvo sačinjava listu tela i javno je objavljuje. Dostupna je na adresi <a class="text-link" href="https://vansudsko.mtt.gov.rs/adrbodies" target="_blank" rel="noopener noreferrer">https://vansudsko.mtt.gov.rs/adrbodies</a>
+          </p>
+          <p class="story-text">
+            Postupak pred telom može da pokrene potrošač samo ukoliko je prethodno izjavio reklamaciju ili prigovor trgovcu. Potrošač protekom jedne godine od dana (bezuspešnog) podnošenja reklamacije gubi pravo na podnošenje predloga za vansudsko rešavanje spora.
+          </p>
+          <p class="story-text">
+            Vansudsko rešenje potrošačkog spora može da traje najduže 90 dana od dana podnošenja predloga.
+          </p>
+          <p class="story-text">
+            Vansudsko rešavanje potrošačkih sporova, ne primenjuje se, pored ostalog:
+          </p>
+          <ul class="delivery-steps">
+            <li>– u potrošačkim sporovima koji su predmet Zakona o zaštiti potrošača, ako je vansudsko rešavanje sporova uređeno posebnim zakonom, a naročito u oblasti pružanja elektronskih komunikacionih usluga, poštanskih usluga, finansijskih usluga, osim finansijskih pogodbi, usluga putovanja.</li>
+            <li>– za rešavanje sporoa po procedurama koje je ustanovio sam trgovac.</li>
+            <li>– na neposredne pregovore između potrošača i trgovca</li>
+            <li>– na pokušaj mirenja strana povodom spora u parničnom postupku</li>
+            <li>– u postupcima koje je trgovac pokrenuo protiv potrošača</li>
+          </ul>
+          <p class="story-text">
+            Svaka stranka u postupku vansudskog rešenja potrošačkog spora plaćanja svoje troškove (troškovi zastupanja, putni troškovi i sl.). Rad tela za vansudsko rešenje potrošačkog spora je besplatan za stranke u postupku vansudskog rešenja potrošačkog spora.
+          </p>
+          <p class="story-text">
+            Opširnije o Reklamacijama možete pogledati na strani <a class="text-link" href="reklamacije.html">REKLAMACIJE</a> koja je sastavni deo ovih uslova.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="eyebrow footer-kicker">Hanna Artesa</p>
+        <h2 class="footer-title">Rucno radjeno sa toplinom</h2>
+        <p class="footer-copy">
+          Koncept pocetne stranice inspirisan mekim butik stilom rucnog rada, spreman za tvoje slike i sadrzaj.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-head">Prodavnica</p>
+        <div class="footer-links">
+          <a href="shop.html">Najprodavanije</a>
+          <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+          <a href="#">Ideje za poklon</a>
+          <a href="#">Novi proizvodi</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Korisni linkovi</p>
+        <div class="footer-links">
+          <a href="politika-privatnosti.html">Politika privatnosti</a>
+          <a href="uslovi-koriscenja.html" aria-current="page">Uslovi korišćenja</a>
+          <a href="reklamacije.html">Reklamacije</a>
+          <a href="dostava.html">Dostava</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Kontakt</p>
+        <div class="contact-list">
+          <p class="contact-item">hello@hannaartesa.com</p>
+          <p class="contact-item">@hannaartesa</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

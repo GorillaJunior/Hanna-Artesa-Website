@@ -24,10 +24,22 @@
       </a>
 
       <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
-        <a href="shop.html">Prodavnica</a>
-        <a href="#story">Nasa prica</a>
-        <a href="#collections">Kolekcije</a>
-        <a href="#contact">Kontakt</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Zene</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=torbe">Torbe</a>
+            <a href="shop.html?filter=kape">Kape</a>
+            <a href="shop.html?filter=carape">Carape</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Deca</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=igracke">Igracke</a>
+          </div>
+        </div>
+        <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+        <a href="kontakt.html">Kontakt</a>
       </nav>
 
       <div class="header-actions">
@@ -64,6 +76,7 @@
           <span>Ukupno</span>
           <strong id="cartTotalValue">0 RSD</strong>
         </div>
+        <a class="btn btn-primary cart-checkout-link" href="placanje.html">Placanje</a>
       </div>
     </aside>
   </div>
@@ -73,7 +86,7 @@
       <div>
         <p class="eyebrow">Nezno, bezvremeno, rucno radjeno</p>
         <h1 class="hero-title">
-          Rucno radjeni dragulji koji unose toplinu, mekocu i dusu u svaki prostor.
+         Rucno radjeni dragulji koji unose toplinu, mekocu i dusu u svaki prostor.
         </h1>
         <p class="hero-text">
           Hanna Artesa spaja rucni rad, mekane tonove i miran premium utisak kako bi tvoji
@@ -82,7 +95,7 @@
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#collections">Pogledaj kolekciju</a>
-          <a class="btn btn-secondary" href="#story">Procitaj nasu pricu</a>
+          <a class="btn btn-secondary" href="politika-privatnosti.html">Politika privatnosti</a>
         </div>
 
         <div class="hero-features">
@@ -155,18 +168,17 @@
         </div>
 
         <div class="story-copy">
-          <p class="eyebrow">Nasa prica</p>
-          <h2 class="story-title">Topla prica brenda sa kojom kupci odmah mogu da se povezu.</h2>
+          <p class="eyebrow">Politika privatnosti</p>
+          <h2 class="story-title">Sve informacije o privatnosti i obradi podataka na jednom mestu.</h2>
           <p class="story-text">
-            Ova sekcija je idealna za tvoju Hanna Artesa pricu - ko si, sta te inspirise, kako
-            nastaju proizvodi i zasto su posebni.
+            Na posebnoj stranici mozes procitati celu politiku privatnosti, obradu licnih podataka,
+            prava korisnika i informacije o koriscenju kolacica.
           </p>
           <p class="story-text">
-            Zameni ovaj tekst svojom pravom porukom brenda i dodaj fotografije radionice,
-            proizvoda ili lifestyle scena kako bi sajt delovao licno i pouzdano.
+            Tekst je izdvojen na zasebnoj stranici kako bi bio pregledniji i laksi za citanje na telefonu i racunaru.
           </p>
           <div class="story-action">
-            <a class="btn btn-secondary" href="#">Saznaj vise</a>
+            <a class="btn btn-secondary" href="politika-privatnosti.html">Procitaj vise</a>
           </div>
         </div>
       </div>
@@ -219,6 +231,7 @@
         >
         <button class="btn btn-primary" type="submit">Prijavi se</button>
       </form>
+      <p class="newsletter-status" id="newsletterStatus" role="status" aria-live="polite"></p>
     </section>
   </main>
 
@@ -236,19 +249,19 @@
         <p class="footer-head">Prodavnica</p>
         <div class="footer-links">
           <a href="shop.html">Najprodavanije</a>
-          <a href="#collections">Kolekcije</a>
+          <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
           <a href="#">Ideje za poklon</a>
           <a href="#">Novi proizvodi</a>
         </div>
       </div>
 
       <div>
-        <p class="footer-head">O nama</p>
+        <p class="footer-head">Korisni linkovi</p>
         <div class="footer-links">
-          <a href="#story">Nasa prica</a>
-          <a href="#">Nacin izrade</a>
-          <a href="#">Cesta pitanja</a>
-          <a href="#">Dostava</a>
+          <a href="politika-privatnosti.html">Politika privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi korišćenja</a>
+          <a href="reklamacije.html">Reklamacije</a>
+          <a href="dostava.html">Dostava</a>
         </div>
       </div>
 

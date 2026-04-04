@@ -104,9 +104,38 @@
             <span>Cena u RSD</span>
             <input class="admin-input" id="adminProductPrice" type="number" min="0" step="100" required>
           </label>
+          <div class="admin-field admin-field-full">
+            <span>Fotografije proizvoda</span>
+            <div class="admin-images-editor" id="adminProductImagesEditor">
+              <div class="admin-images-list" id="adminProductImagesList"></div>
+              <div class="admin-images-actions">
+                <button class="admin-action-btn" id="adminAddImageBtn" type="button">Dodaj fotografiju</button>
+                <p class="admin-images-note">Prva fotografija se koristi kao glavna slika proizvoda.</p>
+              </div>
+            </div>
+          </div>
           <label class="admin-field admin-field-full">
-            <span>Putanja slike</span>
-            <input class="admin-input" id="adminProductImage" type="text" placeholder="Slike/Proizvodi/naziv-slike.jpeg" required>
+            <span>Info</span>
+            <textarea class="admin-input admin-textarea" id="adminProductDescription" rows="4" placeholder="Kratak opis proizvoda, namena, stil i glavne informacije."></textarea>
+          </label>
+          <label class="admin-field">
+            <span>Materijal</span>
+            <input class="admin-input" id="adminProductMaterial" type="text" placeholder="Na primer: pamucno predivo, punjenje, metalni detalji...">
+          </label>
+          <label class="admin-field">
+            <span>Dimenzije</span>
+            <input class="admin-input" id="adminProductDimensions" type="text" placeholder="Na primer: 35 x 28 cm">
+          </label>
+          <label class="admin-field">
+            <span>Kategorija</span>
+            <select class="admin-input" id="adminProductCategory">
+              <option value="torbe">Torbe</option>
+              <option value="kape">Kape</option>
+              <option value="carape">Carape</option>
+              <option value="igracke">Deca</option>
+              <option value="odeca">Odeca</option>
+              <option value="dekor">Dekor</option>
+            </select>
           </label>
           <label class="admin-field">
             <span>Status</span>
@@ -136,9 +165,10 @@
             <thead>
               <tr>
                 <th>Proizvod</th>
+                <th>Kategorija</th>
                 <th>Cena</th>
                 <th>Status</th>
-                <th>Slika</th>
+                <th>Fotografije</th>
                 <th>Akcije</th>
               </tr>
             </thead>

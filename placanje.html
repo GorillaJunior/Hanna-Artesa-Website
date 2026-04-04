@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Artesa | Placanje</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="info-page checkout-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-home" href="index.html" aria-label="Hanna Artesa">
+        <img class="brand-logo" src="logo.png" alt="Hanna Artesa logo">
+      </a>
+
+      <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Zene</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=torbe">Torbe</a>
+            <a href="shop.html?filter=kape">Kape</a>
+            <a href="shop.html?filter=carape">Carape</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Deca</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=igracke">Igracke</a>
+          </div>
+        </div>
+        <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button header-btn" id="cartToggle" type="button" aria-label="Otvori korpu">
+          <span class="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M3 5h2l2.2 9.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7.1" />
+              <circle cx="10" cy="19" r="1.7" />
+              <circle cx="17" cy="19" r="1.7" />
+            </svg>
+          </span>
+          <span class="cart-copy">
+            <span class="cart-label">Korpa</span>
+            <span class="cart-total" data-cart-total>0 RSD</span>
+          </span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otvori meni" type="button">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-drawer" id="cartDrawer" hidden>
+    <button class="cart-backdrop" data-cart-close type="button" aria-label="Zatvori korpu"></button>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-head">
+        <h2 class="cart-title" id="cartTitle">Korpa</h2>
+        <button class="cart-close" data-cart-close type="button" aria-label="Zatvori korpu">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-empty" id="cartEmpty">Korpa je trenutno prazna.</p>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Ukupno</span>
+          <strong id="cartTotalValue">0 RSD</strong>
+        </div>
+        <a class="btn btn-primary cart-checkout-link" href="placanje.html">Placanje</a>
+      </div>
+    </aside>
+  </div>
+
+    <section class="section delivery-content">
+      <div class="container delivery-layout">
+        <article class="delivery-card delivery-card-main">
+          <p class="eyebrow">Forma</p>
+          <h2 class="delivery-title">Podaci kupca</h2>
+          <p class="story-text">
+            Polja ispod sluze za demonstracionu narudzbinu. Nakon slanja videcete potvrdu, a korpa ce se isprazniti.
+          </p>
+
+          <form class="checkout-form" id="checkoutForm">
+            <label class="checkout-field">
+              <span>Ime</span>
+              <input class="checkout-input" type="text" name="first_name" autocomplete="given-name" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Prezime</span>
+              <input class="checkout-input" type="text" name="last_name" autocomplete="family-name" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Ulica</span>
+              <input class="checkout-input" type="text" name="street" autocomplete="address-line1" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Broj</span>
+              <input class="checkout-input" type="text" name="street_number" autocomplete="address-line2" required>
+            </label>
+
+            <label class="checkout-field checkout-field-full">
+              <span>Stan / sprat / dodatak</span>
+              <input class="checkout-input" type="text" name="apartment" autocomplete="address-line2">
+            </label>
+
+            <label class="checkout-field">
+              <span>Grad</span>
+              <input class="checkout-input" type="text" name="city" autocomplete="address-level2" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Postanski broj</span>
+              <input class="checkout-input" type="text" name="postal_code" autocomplete="postal-code" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Telefon</span>
+              <input class="checkout-input" type="tel" name="phone" autocomplete="tel" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Email</span>
+              <input class="checkout-input" type="email" name="email" autocomplete="email" required>
+            </label>
+
+            <label class="checkout-field checkout-field-full">
+              <span>Napomena</span>
+              <textarea class="checkout-input checkout-textarea" name="note" rows="5" placeholder="Na primer: pozovite pre isporuke, ulaz, sprat ili dodatne napomene."></textarea>
+            </label>
+
+            <div class="checkout-actions">
+              <button class="btn btn-primary" type="submit">Posalji porudzbinu</button>
+              <a class="btn btn-secondary" href="shop.html">Nazad u prodavnicu</a>
+            </div>
+          </form>
+        </article>
+
+        <aside class="delivery-card delivery-card-side">
+          <p class="eyebrow">Pregled</p>
+          <h2 class="delivery-title">Vasa korpa</h2>
+          <p class="story-text checkout-note">
+            Proverite stavke iz korpe pre nego sto posaljete podatke za dostavu.
+          </p>
+          <div class="checkout-summary" id="checkoutSummary" aria-live="polite"></div>
+          <div class="checkout-total-row">
+            <span>Ukupno za placanje</span>
+            <strong id="checkoutSummaryTotal">0 RSD</strong>
+          </div>
+          <div class="checkout-legal">
+            <p class="story-text checkout-legal-copy">Plaćanje pouzećem</p>
+            <p class="story-text checkout-legal-copy">
+              Plaćanje gotovinom prilikom dostave. Cena dostave je informativnog karaktera, pa može doći do malih odstupanja. Cena se obračunava po zvaničnom cenovniku kurirske službe.
+            </p>
+            <p class="story-text checkout-legal-copy">
+              Vaši lični podaci će biti obrađeni u skladu sa našom politikom privatnosti - <a href="politika-privatnosti.html">politika privatnosti</a>.
+            </p>
+            <label class="checkout-checkbox checkout-legal-checkbox" for="checkoutTermsConsent">
+              <input id="checkoutTermsConsent" type="checkbox" name="consent" form="checkoutForm" required>
+              <span>Pročitao/la sam i informisao/la o svom pravu da otkažem kupovinu i prihvatam uslove prodaje -</span>
+            </label>
+            <details class="checkout-terms-window">
+              <summary>uslovi</summary>
+              <div class="checkout-terms-scroll">
+                <p class="story-text">
+                  Internet prodavnica Legacy Store posluje u skladu sa Zakonom o elektronskoj trgovini i svim ostalim važećim zakonima i pozitivnim propisima u Republici Srbiji. Detaljni uslovi kupovine navedeni su u daljem tekstu te Vas molimo da se upoznate sa njima pre nego što obavite kupovinu. Registracijom i korišćenjem sajta Legacy Store se smatra da ste u potpunosti upoznati i saglasni sa ovde navedenim Uslovima kupovine i da ih prihvatate. Ukoliko se sa istima ne slažete i ne prihvatate ih, molimo vas da ne koristite ovaj sajt.
+                </p>
+                <p class="story-text">Poručivanje robe:</p>
+                <p class="story-text">
+                  Poručivanje je prvi korak u kupovini preko našeg sajta. Pošto odaberete proizvode i smestite ih u korpu, možete obaviti poručivanje. Roba će biti rezervisana isključivo kada je porudžbina poslata tj porudžbina zaključena. Ukoliko artikli stoje u korpi i porudžbina nije poslata tj nije zaključena, ti artikli nisu rezervisani za vas i bilo koji drugi korisnik može da ih poruči. Nakon što pošaljete porudžbinu, u roku od nekoliko sekundi stiže Vam obaveštenje o Prijemu porudžbine na e-mail koji ste ostavili, sa dodeljenim brojem porudžbine, prikazom poručenih artikala i iznosom.
+                </p>
+                <p class="story-text">Poručivanje mogu obavljati fizička i pravna lica.</p>
+                <p class="story-text">Kako kupiti:</p>
+                <p class="story-text">
+                  Kupovina putem sajta Legacy Store je veoma jednostavna. Izaberite artikle koje želite i sledite link KORPA. Unesite svoje lične podatke i pošaljite nam porudžbinu. U slučaju trenutne nemogućnosti u isporuci traženog dela ili moguće zamene drugim proizvođačem, bićete kontaktirani radi dogovora. Kupovinu na našem web shopu, možete izvršiti kao registrovani korisnik ili kao GOST (jednokratna porudžbina).
+                </p>
+                <p class="story-text">Način plaćanja na internet prodavnici:</p>
+                <p class="story-text">
+                  Robu poručenu putem našeg sajta Legacy Store plaćate pouzećem, odnosno plaćate gotovinom kuriru tražene brze pošte prilikom isporuke.
+                </p>
+                <p class="story-text">Odustanak od ugovora:</p>
+                <p class="story-text">
+                  Svaki kupac ima pravo na jednostrani raskid ugovora o kupovini zaključenog na daljinu, iz bilo kog razloga u roku od 14 dana od dana prijema pošiljke. Jedini preduslov je da roba nije korišćena i da je originalno zapakovana i vraćena u pakovanju u kom je isporučena i sa fiskalnim računom i zapisnikom koji dobijate u e-mejlu koji ste ostavili (Obrazac o odustanku). Ovo pravo od odustanka od ugovora se NE odnosi na kupovinu u maloprodajnim objektima, s obzirom da to nije kupovina na daljinu i izvan poslovnih prostorija.
+                </p>
+                <p class="story-text">
+                  Kupac je dužan da izjavu o odustanku kupovine pošalje poštom nazad na adresu firme.
+                </p>
+                <p class="story-text">
+                  Internet prodavnica Legacy Store zadržava pravo da u svakom trenutku i bez prethodnog obaveštenja ukine ili izmeni bilo koji od ovde navedenih Uslova korišćenja sajta.
+                </p>
+                <p class="story-text">Sve cene na našoj prodavnici www.legacystore.rs sadrže obračunat PDV</p>
+                <p class="story-text">Opis proizvoda:</p>
+                <p class="story-text">
+                  Legacy Store nastoji da sve proizvode opiše što je tačnije moguće. Takođe, Legacy Store ne garantuje da su svi navedeni podaci u vezi proizvoda niti slike 100% tačni, kompletni, pouzdani i bez greške.
+                </p>
+                <p class="story-text">VANSUDSKO REŠAVANJE POTROŠAČKIH SPOROVA</p>
+                <p class="story-text">
+                  Potrošački spor može se rešiti postupkom vansudskog rešenja potrošačkih sporova. Kao trgovac smo dužni da vas obavestimo da smo po zakonu obavezni da učestvujemo u ovom postupku. Vansudsko rešavanje potrošačkih sporova obavlja se na transparentanm efikasan, brz i privlačan način pred telom za vansudsko rešavanje potrošačkih sporova. Ministarstvo sačinjava listu tela i javno je objavljuje. Dostupna je na adresi <a href="https://vansudsko.mtt.gov.rs/adrbodies" target="_blank" rel="noopener noreferrer">https://vansudsko.mtt.gov.rs/adrbodies</a>
+                  Postupak pred telom može da pokrene potrošač samo ukoliko je prethodno izjavio reklamaciju ili prigovor trgovcu. Potrošač protekom jedne godine od dana (bezuspešnog) podnošenja reklamacije gubi pravo na podnošenje predloga za vansudsko rešavanje spora.
+                </p>
+                <p class="story-text">
+                  Vansudsko rešenje potrošačkog spora može da traje najduže 90 dana od dana podnošenja predloga.
+                  Vansudsko rešavanje potrošačkih sporova, ne primenjuje se, pored ostalog:
+                </p>
+                <ul class="delivery-steps">
+                  <li>– u potrošačkim sporovima koji su predmet Zakona o zaštiti potrošača, ako je vansudsko rešavanje sporova uređeno posebnim zakonom, a naročito u oblasti pružanja elektronskih komunikacionih usluga, poštanskih usluga, finansijskih usluga, osim finansijskih pogodbi, usluga putovanja.</li>
+                  <li>– za rešavanje sporoa po procedurama koje je ustanovio sam trgovac.</li>
+                  <li>– na neposredne pregovore između potrošača i trgovca</li>
+                  <li>– na pokušaj mirenja strana povodom spora u parničnom postupku</li>
+                  <li>– u postupcima koje je trgovac pokrenuo protiv potrošača</li>
+                </ul>
+                <p class="story-text">
+                  Svaka stranka u postupku vansudskog rešenja potrošačkog spora plaćanja svoje troškove (troškovi zastupanja, putni troškovi i sl.). Rad tela za vansudsko rešenje potrošačkog spora je besplatan za stranke u postupku vansudskog rešenja potrošačkog spora.
+                </p>
+                <p class="story-text">
+                  Opširnije o Reklamacijama možete pogledati na strani <a href="reklamacije.html">REKLAMACIJE</a> koja je sastavni deo ovih uslova.
+                </p>
+              </div>
+            </details>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="eyebrow footer-kicker">Hanna Artesa</p>
+        <h2 class="footer-title">Rucno radjeno sa toplinom</h2>
+        <p class="footer-copy">
+          Koncept pocetne stranice inspirisan mekim butik stilom rucnog rada, spreman za tvoje slike i sadrzaj.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-head">Prodavnica</p>
+        <div class="footer-links">
+          <a href="shop.html">Najprodavanije</a>
+          <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+          <a href="#">Ideje za poklon</a>
+          <a href="#">Novi proizvodi</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Korisni linkovi</p>
+        <div class="footer-links">
+          <a href="politika-privatnosti.html">Politika privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi koriscenja</a>
+          <a href="reklamacije.html">Reklamacije</a>
+          <a href="dostava.html">Dostava</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-head">Kontakt</p>
+        <div class="contact-list">
+          <p class="contact-item">hello@hannaartesa.com</p>
+          <p class="contact-item">@hannaartesa</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -24,10 +24,22 @@
       </a>
 
       <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
-        <a href="shop.html" aria-current="page">Prodavnica</a>
-        <a href="index.html#story">Nasa prica</a>
-        <a href="index.html#collections">Kolekcije</a>
-        <a href="index.html#contact">Kontakt</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Zene</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=torbe">Torbe</a>
+            <a href="shop.html?filter=kape">Kape</a>
+            <a href="shop.html?filter=carape">Carape</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button">Deca</button>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?filter=igracke">Igracke</a>
+          </div>
+        </div>
+        <a href="https://legacystore.rs/" target="_blank" rel="noopener noreferrer">Kozna Galanterija</a>
+        <a href="kontakt.html">Kontakt</a>
       </nav>
 
       <div class="header-actions">
@@ -64,6 +76,7 @@
           <span>Ukupno</span>
           <strong id="cartTotalValue">0 RSD</strong>
         </div>
+        <a class="btn btn-primary cart-checkout-link" href="placanje.html">Placanje</a>
       </div>
     </aside>
   </div>

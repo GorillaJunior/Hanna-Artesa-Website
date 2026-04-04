@@ -15,6 +15,15 @@ function formatDate(value) {
   }).format(new Date(value));
 }
 
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function renderStats() {
   const summary = store.getAnalyticsSummary();
 
@@ -40,7 +49,8 @@ function renderProductsTable() {
       return (
         product.name.toLowerCase().includes(searchValue) ||
         product.id.toLowerCase().includes(searchValue) ||
-        product.image.toLowerCase().includes(searchValue)
+        product.image.toLowerCase().includes(searchValue) ||
+        (product.images || []).some((imagePath) => imagePath.toLowerCase().includes(searchValue))
       );
     })
     .sort((a, b) => {
@@ -53,6 +63,7 @@ function renderProductsTable() {
   tbody.innerHTML = "";
 
   products.forEach((product) => {
+    const imageCount = Array.isArray(product.images) && product.images.length ? product.images.length : (product.image ? 1 : 0);
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>
@@ -61,9 +72,13 @@ function renderProductsTable() {
           <span>${product.id}</span>
         </div>
       </td>
+      <td>${product.category || "-"}</td>
       <td>${formatPrice(product.priceValue)}</td>
       <td><span class="admin-status admin-status-${product.status}">${product.status}</span></td>
-      <td class="admin-image-path">${product.image}</td>
+      <td class="admin-image-path">
+        <strong>${imageCount} fotografija</strong>
+        <span>${product.image}</span>
+      </td>
       <td>
         <div class="admin-row-actions">
           <button class="admin-action-btn" data-action="edit" data-product-id="${product.id}" type="button">Izmeni</button>
@@ -159,11 +174,62 @@ function renderAdmin() {
   renderNewsletter();
 }
 
+function getProductImages(product = null) {
+  if (Array.isArray(product?.images) && product.images.length) {
+    return product.images.filter((value) => typeof value === "string" && value.trim());
+  }
+
+  if (product?.image) {
+    return [product.image];
+  }
+
+  return [""];
+}
+
+function getAdminImageValues() {
+  return Array.from(document.querySelectorAll("[data-admin-image-input]"))
+    .map((input) => input.value.trim())
+    .filter(Boolean);
+}
+
+function createAdminImageRow(value = "") {
+  const row = document.createElement("div");
+  row.className = "admin-image-row";
+  row.innerHTML = `
+    <input
+      class="admin-input"
+      data-admin-image-input
+      type="text"
+      value="${escapeHtml(value)}"
+      placeholder="Slike/Proizvodi/naziv-slike.jpeg"
+    >
+    <button class="admin-action-btn danger" data-admin-remove-image type="button">Ukloni</button>
+  `;
+  return row;
+}
+
+function renderAdminImageInputs(images = [""]) {
+  const list = document.getElementById("adminProductImagesList");
+  if (!list) {
+    return;
+  }
+
+  const normalizedImages = images.length ? images : [""];
+  list.innerHTML = "";
+  normalizedImages.forEach((image) => {
+    list.appendChild(createAdminImageRow(image));
+  });
+}
+
 function fillForm(product = null) {
   document.getElementById("adminProductId").value = product?.id || "";
   document.getElementById("adminProductName").value = product?.name || "";
   document.getElementById("adminProductPrice").value = product?.priceValue || "";
-  document.getElementById("adminProductImage").value = product?.image || "";
+  renderAdminImageInputs(getProductImages(product));
+  document.getElementById("adminProductDescription").value = product?.description || "";
+  document.getElementById("adminProductMaterial").value = product?.material || "";
+  document.getElementById("adminProductDimensions").value = product?.dimensions || "";
+  document.getElementById("adminProductCategory").value = product?.category || "torbe";
   document.getElementById("adminProductStatus").value = product?.status || "active";
 }
 
@@ -180,13 +246,19 @@ function exportSnapshot() {
 
 function setupAdminForm() {
   const form = document.getElementById("adminProductForm");
+  const imageList = document.getElementById("adminProductImagesList");
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const name = document.getElementById("adminProductName").value.trim();
     const idField = document.getElementById("adminProductId").value.trim();
-    const image = document.getElementById("adminProductImage").value.trim();
+    const images = getAdminImageValues();
+    const image = images[0] || "";
+    const description = document.getElementById("adminProductDescription").value.trim();
+    const material = document.getElementById("adminProductMaterial").value.trim();
+    const dimensions = document.getElementById("adminProductDimensions").value.trim();
+    const category = document.getElementById("adminProductCategory").value;
     const status = document.getElementById("adminProductStatus").value;
     const priceValue = Number(document.getElementById("adminProductPrice").value);
 
@@ -199,6 +271,11 @@ function setupAdminForm() {
       name,
       priceValue,
       image,
+      images,
+      description,
+      material,
+      dimensions,
+      category,
       status,
     });
 
@@ -209,6 +286,28 @@ function setupAdminForm() {
 
   document.getElementById("adminFormResetBtn").addEventListener("click", () => {
     fillForm();
+  });
+
+  document.getElementById("adminAddImageBtn").addEventListener("click", () => {
+    imageList.appendChild(createAdminImageRow(""));
+  });
+
+  imageList.addEventListener("click", (event) => {
+    const removeButton = event.target.closest("[data-admin-remove-image]");
+    if (!removeButton) {
+      return;
+    }
+
+    const rows = imageList.querySelectorAll(".admin-image-row");
+    if (rows.length <= 1) {
+      const input = rows[0]?.querySelector("[data-admin-image-input]");
+      if (input) {
+        input.value = "";
+      }
+      return;
+    }
+
+    removeButton.closest(".admin-image-row")?.remove();
   });
 }
 
@@ -290,6 +389,7 @@ function initAdmin() {
   setupAdminForm();
   setupProductActions();
   setupToolbar();
+  fillForm();
   renderAdmin();
 }
 
